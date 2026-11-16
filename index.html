@@ -9,15 +9,15 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Nastaliq+Urdu:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&family=Noto+Serif+SC:wght@400;600&family=Noto+Serif+JP:wght@400;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap">
 <style>
 :root{
-  --ground:#EDF0F3; --ink:#1C2230; --muted:#5E6878; --accent:#2E5A87; --gold:#9A7A34; --rule:#C8D0DA;
+  --ground:#EDF0F3; --ink:#1C2230; --muted:#5E6878; --accent:#2E5A87; --gold:#9A7A34; --rule:#C8D0DA; --gael:#1F6B48; --gael-wash:#E3EEE8;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --ground:#10141C; --ink:#DCE2EA; --muted:#8C96A6; --accent:#8DB1D8; --gold:#CBAA60; --rule:#2A3240; color-scheme:dark;
+    --ground:#10141C; --ink:#DCE2EA; --muted:#8C96A6; --accent:#8DB1D8; --gold:#CBAA60; --rule:#2A3240; --gael:#6FBF93; --gael-wash:#14241C; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --ground:#10141C; --ink:#DCE2EA; --muted:#8C96A6; --accent:#8DB1D8; --gold:#CBAA60; --rule:#2A3240; color-scheme:dark;
+  --ground:#10141C; --ink:#DCE2EA; --muted:#8C96A6; --accent:#8DB1D8; --gold:#CBAA60; --rule:#2A3240; --gael:#6FBF93; --gael-wash:#14241C; color-scheme:dark;
 }
 body{background:var(--ground);color:var(--ink);font-family:"EB Garamond",Garamond,"Times New Roman",serif;font-size:19px;line-height:1.6;padding:0 16px}
 main{max-width:34rem;margin:0 auto;padding-block:4.5rem 6rem}
@@ -85,11 +85,22 @@ h2 .name{font-family:"IM Fell English",Georgia,serif;font-style:italic;letter-sp
 #ru h1, #ru h2, #ru h2 .name, #ru .byline, #ru .eyebrow, #ru .fin, .lang button[lang="ru"], #ru .prose h2 + p::first-letter{font-family:"EB Garamond",Georgia,serif}
 #ru .eyebrow, #ru h2{letter-spacing:.06em;text-transform:uppercase;font-size:.8rem}
 #ru h2 .name{text-transform:none;letter-spacing:0;font-size:1.3rem}
+.gael-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.75rem;margin:0 auto 1rem;padding:.7rem 1rem;max-width:22rem;border:1.5px solid var(--gael);border-radius:3px;background:var(--gael-wash)}
+.gael-label{font-family:"IM Fell English",Georgia,serif;font-style:italic;color:var(--gael);font-size:.95rem}
+.gael-box button{font-family:"IM Fell English SC",Georgia,serif;letter-spacing:.12em;font-size:.9rem;background:transparent;color:var(--gael);border:1px solid var(--gael);padding:.35rem 1.2rem;cursor:pointer;border-radius:2px}
+.gael-box button[aria-pressed="true"]{background:var(--gael);color:var(--ground)}
+.gael-box button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+#ga h2 .num, #ga .eyebrow{color:var(--gael)}
+#ga .prose h2 + p::first-letter, #ga h1 .amp{color:var(--gael)}
 </style>
 
 </head>
 <body>
 <main>
+<div class="gael-box" role="group" aria-label="Gaeilge">
+  <span class="gael-label">Gaeilge na Gaillimhe</span>
+  <button type="button" id="btn-ga" data-lang="ga" aria-pressed="false" lang="ga">Gaeilge</button>
+</div>
 <nav class="lang" aria-label="Language">
   <button type="button" id="btn-mn" data-lang="mn" aria-pressed="false" lang="mn">Монгол</button>
   <button type="button" id="btn-fr" data-lang="fr" aria-pressed="false">Français</button>
@@ -2248,11 +2259,131 @@ h2 .name{font-family:"IM Fell English",Georgia,serif;font-style:italic;letter-sp
 </div>
 <div class="fin">· · ·<small>Koniec</small></div>
 </div>
+
+<div id="ga" lang="ga" hidden>
+<header>
+  <div class="byline">Comhúdair: Shiloh &amp; Rohan</div>
+  <div class="eyebrow">Eipic i bPrós</div>
+  <h1>Temüjin <span class="amp">agus</span> Börte</h1>
+  <p class="sub">Na rudaí a dhéanfá ar son mná a bhfuil grá agat di</p>
+  <svg class="horizon" viewBox="0 0 300 14" aria-hidden="true"><path d="M0 10 Q60 6 120 9 T240 8 T300 10"/><circle cx="150" cy="4" r="3"/></svg>
+</header>
+<div class="prose">
+<section>
+  <h2><span class="name">Achainí</span></h2>
+  <p>Can, a Bhé, faoi Temüjin agus faoi Börte álainn; can faoin ngrá a bhláthaigh san áit a dtéann an féar i dteagmháil leis an spéir gan teorainn; can faoi na móideanna a chogair beirt pháistí lena chéile, i bhfad sular rugadh an impireacht ba mhó ar domhan.</p>
+</section>
+
+<section>
+  <h2><span class="num">Duan I</span><span class="name">An Cleamhnas</span></h2>
+  <p>Roimh breacadh an lae, nuair a bhí an sioc ina airgead ar an má, chuir Yesügei a mhac ar mhuin capaill agus rug sé ar an srian. Soir leo tríd an bhféar cogarnach, i dtreo bothanna feilte mhuintir Onggirat. Ar an mbóthar tháinig Dei Sechen ina n-araicis, seanfhear a raibh a cheann liath ag go leor geimhreadh, agus d’inis sé dóibh brionglóid na hoíche roimhe: tháinig seabhac bán, chomh bán le sneachta ar bharr Khentii, anuas ón spéir agus thuirling sé ar a chaol láimhe; i gcrúb amháin bhí an ghrian aige, órga agus geal, agus sa chrúb eile solas airgid na gealaí. <em>“Is fútsa a bhí an seabhac ag caint,”</em> a dúirt sé leis an ngasúr; ansin d’fhéach sé air go fada agus rinne sé meangadh: <em>“Tá tine ina shúile, agus tá a aghaidh mar an chamhaoir.”</em> Ansin ghlaoigh sé ar a iníon. Tháinig Börte isteach, trí bliana déag d’aois, agus d’fhéach sí idir an dá shúil ar an ngasúr chomh dána is nach ndearna cailín ar bith roimpi. Ghabh rud éigin eatarthu nach raibh ainm air: mar an ghaoth a shíobann thar an bhféar gan í a fheiceáil, ach é chomh geal le lasair.</p>
+  <p>Chroith an dá athair lámh; socraíodh an cleamhnas. De réir an nóis, d’fhan an gasúr le muintir na brídeoige, agus d’fhill Yesügei abhaile leis féin. Ar an mbealach chonaic sé tinte féasta na dTatarach. Is naofa dlí na fáilte ar an steip, mar sin shuigh sé ina measc agus d’ól sé. Ach d’aithin na Tataraigh a seannámhaid, agus i gcorn a dí chas an nimh í féin mar nathair. Agus é ag fáil bháis, shroich sé a bhoth agus chuir sé fios ar a mhac. Nuair a tháinig an teachtaire, bhí deireadh le sonas gearr an ghasúir. D’fhág sé a chéile geallta le móid amháin, lasánta agus fíor: <em>“Pé rud a tharlóidh, tiocfaidh mé ar ais ar do shon.”</em></p>
+</section>
+
+<section>
+  <h2><span class="num">Duan II</span><span class="name">An tSaighead</span></h2>
+  <p>Ansin tháinig blianta an ocrais. Thiontaigh an treibh a gcúl orthu agus d’fhág siad an bhaintreach agus a clann mhac faoi thrócaire an fhásaigh. Thochail siad fréamhacha, rug siad ar iasc san abhainn reoite, agus mhair siad ar ocras, ar dhóchas agus ar bhrionglóidí. Ach Begter, an leasdeartháir ba shine, mac máthar eile, thóg sé gach rud ba mhian leis: iasc, fuiseog, áit cois tine nár leis í. Go dtí lá amháin, d’éalaigh Temüjin agus Khasar, gruaim ar a n-aghaidh agus boghanna ina lámha, suas an cnoc mar a raibh Begter ag faire ar na capaill. Níor theith sé. Dúirt sé focal deireanach amháin: <em>“Spáráil Belgutei.”</em> Ansin chan na saighde, agus rith fuil an dearthár síos an fána féarach.</p>
+  <p>Lig a máthair Hoelun scread phianmhar: <em>“A mhic tíre! Tá sibh ag stróiceadh bhur scáile féin!”</em> D’iompair Temüjin na focail sin go lá a bháis, agus níor éirigh le haon choncas ar domhan a meáchan a laghdú.</p>
+</section>
+
+<section>
+  <h2><span class="num">Duan III</span><span class="name">An Anda</span></h2>
+  <p>Agus fós, trí na blianta searbha sin, bhí cairdeas amháin ag lonrú, mar ghrian an gheimhridh ar chloch fhuar. Ar an Onon reoite, bhí beirt ghasúr, aon bhliain déag d’aois ar éigean, ag gáire go dána, ag sleamhnú cnámha alt thar an leac oighir lonrach agus á malartú gan smaoineamh. Agus nuair a tháinig an t-earrach, mhalartaigh siad saighde feadóige freisin, a raibh a mbarr déanta as adharc gamhna. Mar sin a rinneadh anda díobh: deartháireacha faoi mhóid, anam le hanam; dhá leath, a deir na seandaoine, a dhéanann iomlán amháin. <em>“Ní scarfaidh muid go deo,”</em> a mhionnaigh siad faoin spéir leathan. <em>“Ní ligfidh ceachtar againn don duine eile titim, ní ligfidh ceachtar againn don duine eile bás a fháil.”</em></p>
+</section>
+
+<section>
+  <h2><span class="num">Duan IV</span><span class="name">An Ruathar</span></h2>
+  <p>Agus é sé bliana déag d’aois, mharcaigh Temüjin soir leis féin, gan a fhios aige an raibh Börte fós ag fanacht leis nó an raibh sí pósta le fear eile cheana. Agus bhí sí ansin ina seasamh: d’fhan sí, mar a gheall sí. Thug a máthair spré annamh luachmhar léi: cóta fionnaidh sáible, chomh dubh le gruaig Börte. Ach níor choinnigh Temüjin é. Thug sé chuig Toghrul é, anda a athar, agus chuaigh sé ar a ghlúine os a chomhair mar a rinne a athair tráth. Agus dúirt Toghrul: <em>“Ar son an chóta seo, aontóidh mé do mhuintir scaipthe arís agus déanfaidh mé cán díot.”</em> Mar sin, bhí bronntanas Börte, spré a láimhe, chun í a cheannach ar ais lá éigin ó thír na Meircíteach.</p>
+  <p>Ach ní mhaireann sonas i bhfad ar an steip. Bíonn an díoltas ag fánaíocht ar an steip ar chrúba foighneacha. Roimh bhreacadh an lae tháinig na Meircítigh chun seanfhiach a ghlanadh: tráth d’fhuadaigh Yesügei brídeog uathu, agus anois theastaigh bean a mhic uathu, agus a chroí a stoitheadh in éineacht léi. Theith Temüjin go hairde Burkhan Khaldun. Ach fuarthas Börte, a bhí i bhfolach i gcairt damh, agus tugadh ó thuaidh í, ina creach i lámha na Meircíteach, deannach an steip ina gruaig agus ina súile.</p>
+  <p>Ní raibh arm aige an uair sin, ná saibhreas, ná ainm. Bhí móid aige, agus lasair ina chroí. Mharcaigh sé chuig puball Toghrul, agus ansin chuig Jamukha, a dheartháir faoi mhóid, dílis agus tástáilte. Faoi sholas na gealaí d’ionsaigh siad an namhaid, san áit a raibh tinte na Meircíteach íseal agus lag. Thrí an slua a bhí ag teitheadh, mharcaigh sé agus é ag glaoch a hainm: <em>“Börte! Börte!”</em> Agus chuala sí é, agus rith sí, agus rug sí ar a shrian faoi sholas bán na gealaí. Tharraing sé chuige í agus choinnigh sé ina bhaclainn í ar feadh na hoíche.</p>
+</section>
+
+<section>
+  <h2><span class="num">Duan V</span><span class="name">An tAoi</span></h2>
+  <p>Ach bhí leanbh ag corraí ina broinn nach raibh a fhios ag aon duine cérbh é a athair, agus nuair a rugadh é, d’fhás na cogair leis. <em>“Cé leis an fhuil seo?”</em> Ní fhéadfadh aon duine a rá go cinnte. Thug Temüjin Jochi ar an leanbh, is é sin “an t-aoi”, agus d’fhógair sé os comhair na treibhe go léir: <em>“Seo é mo chéad mhac.”</em> San áit ar dlí í an fhuil, roghnaigh seisean an grá. Agus b’fhéidir gur ghlan sé seanfhiach mar sin: an té a mharaigh deartháir tráth, ghlac sé anois le mac.</p>
+</section>
+
+<section>
+  <h2><span class="num">Duan VI</span><span class="name">An Fuascailt</span></h2>
+  <p>Mar a dhíol a dheartháireacha Iósaef fadó, mar sin a bhrath a ghaolta fuarchroíocha Temüjin. Rug na Tayichiud air, iad faoi eagla roimh an gcoileán mac tíre a bhí fásta anois, agus bhain siad de an smacht ar a chorp féin: dúnadh cuing de chrann learóige ar a mhuineál agus ar a chaol láimhe, agus Targutai ina sheasamh in aice leis ag magadh faoi. Thug siad ó phuball go puball é, ina sclábhaí, ina ainmhí, ina chodladh san aoileach agus ocras air in aice lena bhféastaí.</p>
+  <p>Agus Börte, an naíonán lena hucht, ní raibh tréad aici ná airgead, ná treibh ná suaimhneas. Osclaíonn an t-ór gach geata ar an steip, agus ní raibh aon ór aici. Ní raibh aici ach í féin. Mar sin, sa dorchadas, dhíol sí a raibh le díol, d’iompair sí an náire agus níor labhair sí focal faoi riamh, agus bhailigh sí, bonn ar bhonn, luach a fir chéile, fad a bhí Jochi, an t-aoi, ina chodladh lena croí.</p>
+  <p>Cheannaigh sí an garda, cheannaigh sí súile an fhairtheora, cheannaigh sí an t-aoire a lig air féin go raibh sé bodhar ar gach scread. Agus ar oíche fhéile ghealach an tsamhraidh bhris siad an chuing agus scaoil siad saor é, ag an nóiméad deireanach. Chonaic sé a haghaidh, chonaic sé an leanbh, agus thuig sé an praghas a d’íoc sí; níor fhiafraigh sé conas, ná cé leis. <em>“Mhionnaigh tú go dtiocfá ar ais ar mo shon,”</em> a dúirt sise. <em>“Ní raibh mé sásta fanacht.”</em> Ansin chrom sé a cheann tuirseach agus d’fhoghlaim sé an rud a d’fhoghlaim Iósaef i dtír Fhorainn: ní hí an fhuil a shlánaíonn an duine a thit, ach an grá.</p>
+</section>
+
+<section>
+  <h2><span class="num">Duan VII</span><span class="name">An Ceathrar Mac</span></h2>
+  <p>Rug sí ceathrar mac dó faoin spéir leathan: Jochi, Ögedei, Chagatai agus Tolui, an duine ab óige, a rugadh nuair a bhí blianta an ocrais agus na seirbhe thart. Díobh go léir, ba é Jochi ba chrua a mharcaigh agus ba chothroime a mheas; lean na fir é trí shneachta agus trí ghaoth reoite. Ach níor dhearmad Chagatai bréag ar bith a d’inis na cogair, agus níor lig sé d’aon cheann acu bás a fháil. Agus nuair a d’fhéach na deartháireacha go crosta ar a chéile thar an tine, chonaic a n-athair tine eile, níos sine: cnoc, iasc, saighead agus scread, agus <em>“A mhic tíre!”</em> Hoelun faoin spéir.</p>
+</section>
+
+<section>
+  <h2><span class="num">Duan VIII</span><span class="name">Cogadh na nDeartháireacha</span></h2>
+  <p>Ach ní fhulaingíonn aon spéir dhá ghrian lasracha, agus rinneadh naimhde de na deartháireacha faoi mhóid. Rialaigh Jamukha de réir sinsearachta agus ainm; d’ardaigh Temüjin na daoine ísle chun glóire. Ag Dalan Baljut bhuaigh Jamukha an cath, ach d’ordaigh sé a chuid príosúnach a bhruith i seachtó coire, agus le déistin chuaigh leath a airm thar an má chuig Temüjin agus níor fhill siad riamh.</p>
+  <p>Faoi dheireadh, faoi bhratacha bailithe na Naimanach, throid Jamukha a chath deireanach; bhí na díslí caite. Ag Chakirmaut, ar thaobh an tsléibhe, bhris na Naimanaigh san oíche, thit siad agus fuair siad bás. Theith Jamukha agus cúigear fear lena thaobh, agus is iad an cúigear céanna a cheangail é, a dhíol é agus a d’inis bréaga. Ach dúirt an Cán: <em>“An té a dhíolann a thiarna ar ór, dhíolfadh sé mise freisin,”</em> agus d’ordaigh sé iad go léir a chur chun báis.</p>
+  <p>Ansin d’iompaigh sé chuig a anda, ceangailte agus traochta, agus dúirt: <em>“Marcaigh liom, mar a rinne muid an mhaidin reoite úd.”</em> Ach d’fhreagair Jamukha: <em>“Ní iompraíonn an spéir ach grian amháin. Ní mhairfidh mé mar scáil faoi do ghrian.”</em> Ansin ghearr Temüjin féin, lena lann féin, na rópaí a cheangail lámha na bhfealltóirí, agus thug sé a chapall, a bhogha agus a bheatha ar ais dó. <em>“Imigh, tá tú saor,”</em> a dúirt sé. <em>“Ná bíodh achrann eadrainn níos mó.”</em> Agus, mar a rinne sé fadó, chuir sé cnámh ailt ó bhruach reoite an Onon i gcroí a bhoise. Mharcaigh Jamukha leis féin isteach san oíche, agus d’fhéach an Cán ina dhiaidh go fada, go dtí go ndeachaigh sé as radharc.</p>
+  <p>Bhí an steip aontaithe faoi dheireadh faoi Chán amháin, agus is ansin a thosaigh ainm Ghinghis Cán.</p>
+</section>
+
+<section>
+  <h2><span class="num">Duan IX</span><span class="name">An Cuntas</span></h2>
+  <p>D’imigh na blianta; d’éirigh an gasúr a bhí á fhiach ina fhear mór, agus d’umhlaigh na treibheanna scaipthe roimh a chumhacht. Ach d’fhan cneá amháin, fiach amháin gan íoc: ruathar na Meircíteach, an bhrídeog a fuadaíodh. Agus a chuid tumen ar a chúl, mharcaigh sé ó thuaidh, deich míle marcach ar lorg na Meircíteach, feadh an Selenge, trí shneachta agus trí thuile, agus d’íoc sé ar ais iad sa bhonn céanna, fuil ar fhuil. Níor spáráladh puball ar bith, níor eitil bratach ar bith arís; lig sé d’ainm na Meircíteach féin bás a fháil. Agus Börte, ina seasamh ag doras feilte a botha, chonaic sí é ag filleadh, agus bhí a fhios aici cé ar a son a rinneadh é go léir.</p>
+</section>
+
+<section>
+  <h2><span class="num">Duan X</span><span class="name">Na Toscairí</span></h2>
+  <p>I bhfad siar, taobh thall de na sléibhte agus den ghaineamh, bhí an Pheirs, saibhir, seoid gach tíre. Ansin shuigh Shah Muhammad ar a ríchathaoir órga ag comhaireamh seoda nach mbeadh riamh dáiríre aige. Chuir an Cán toscairí chuige le síoda agus séad, chun síocháin a thairiscint agus bóithre na trádála a oscailt.</p>
+  <p>D’fhéach an Shah ar na bronntanais agus rinne sé gáire tarcaisniúil: <em>“An é seo cíos aoire ó bhroinn? Tuilleadh óir! Is suarach iad bhur mbronntanais!”</em> Ní raibh a thuilleadh ag na toscairí, agus d’umhlaigh siad arís. Ansin mharaigh sé iad ar an láthair, agus chuir sé a gcloigne, i málaí, ar ais chuig puball feilte an Chána.</p>
+</section>
+
+<section>
+  <h2><span class="num">Duan XI</span><span class="name">An tÓr Leáite</span></h2>
+  <p>Ansin chuaigh Temüjin suas go hairde Burkhan Khaldun, rinne sé troscadh agus ghuigh sé chuig Tengri de lá agus d’oíche. Agus nuair a tháinig sé anuas, tháinig an stoirm anuas leis: céad míle marcach, saithe ollmhór amháin. Thit Bukhara, agus Samarkand, agus tuilleadh; Urgench, mar ar threoraigh Jochi a chuid fear chun cogaidh. Dódh na cathracha mar fhéar i dtinte an fhómhair, ón Oxus go ceo i bhfad i gcéin Mhuir Chaisp.</p>
+  <p>Tarraingíodh an Shah os comhair an chonraitheora, agus d’fhiafraigh seisean de: <em>“An é an t-ór a raibh ocras ort ina dhiaidh? Ól do sháith mar sin.”</em> Leáigh siad an stór, agus doirteadh an t-ór síos an scornach shantach. Sin mar a chríochnaigh an fear a mheas luach duine in ór: a ocras sásaithe, a scornach dhóite fuaraithe.</p>
+</section>
+
+<section>
+  <h2><span class="num">Duan XII</span><span class="name">An Uaigh</span></h2>
+  <p>D’éirigh an Cán sean; bhí a fhéasóg liath mar an sioc, agus d’fhan Börte lena thaobh, a gruaig mar airgead. Fuair sé bás ar an mbóthar, mar a fhaigheann laochra bás, agus go luath ní raibh a fhios ag aon duine beo cá bhfuil sé curtha: shatail míle capall a uaigh go talamh, ionas nach bhfaighfí a áit scíthe go deo.</p>
+</section>
+
+<section>
+  <h2><span class="num">Duan XIII</span><span class="name">Ag Geataí Vín</span></h2>
+  <p>Chuaigh Batu, mac an aoi, amach chun a chruthú gurbh fhiú sliocht Jochi an grá sin. In éineacht le Subutai, seanmhac tíre liath an chogaidh, thrasnaigh sé an Volga; thit Kiev, cáiliúil ó aimsir ársa, i lasracha, dhubhaigh a cruinneacháin órga, agus níor fhill aon duine a casadh ar na marcaigh.</p>
+  <p>Ansin chuaigh siad trí bhearnaí sneachtúla na gCarpatach agus d’ionsaigh siad Béla, rí na hUngáire. Ag Mohi, mar a lúbann abhainn Sajó, fuair ridirí na Críostaíochta deireadh searbh: dódh a ndún cairteacha, gabhadh an droichead, agus bhí an Ungáir briste faoin ngrian.</p>
+  <p>Agus níos faide siar fós, agus Pest ar lasadh taobh thiar díobh, tháinig marcaigh na Mongól chomh fada le geataí na hOstaire. Os comhair bhallaí Vín d’iompaigh an tIarthar bán le heagla, agus bhuail gach clog eaglaise do mhairbh na hEorpa. Ansin tháinig marcach ón oirthear agus dúirt: <em>“Tá an Cán Mór Ögedei, d’uncail, marbh.”</em> Agus d’iompaigh Batu a chapaill soir, agus tháinig an Eoraip slán, í ar a glúine cheana féin.</p>
+</section>
+
+<section>
+  <h2><span class="num">Duan XIV</span><span class="name">Kublai Cán <span lang="zh">忽必烈</span></span></h2>
+  <p>Ach ó Tolui, an mac ab óige dár rug sí, tháinig gasúr a bhí i ndán dó domhan iomlán a rialú, agus níos mó.</p>
+  <p>Chuaigh Kublai, an garmhac, thar an mBalla Mór, thug sé grá don tír a ghabh sé, agus ghabh sé í ar fad. D’iarr sé comhairle ar shaoithe na Síne agus thug sé ainm dá ré as Leabhar na nAthruithe: <em>Yuan</em>, is é sin an Bunús, an chéad tobar; agus chuir sé toil na Mongól faoi chúrsa na Spéire. De réir pleananna Liu Bingzhong d’éirigh Dadu, cathair mhór an Chána, lena ballaí, lena lochanna agus lena hascaillí cloiche: an talamh as ar fhás Beijing an lae inniu.</p>
+  <p>Bhí ríshliocht Song tite; bhí an tuaisceart agus an deisceart aontaithe arís, den chéad uair ó dheireadh ré gheal Tang. Shín sé an Chanáil Mhór go geataí Dadu, ionas go gcothódh rís an deiscirt an tuaisceart; d’ordaigh sé airgead páipéir a phriontáil, chomh héadrom leis an aer, a d’iompair na ceannaithe i ngach áit; agus ar an stáitse bhláthaigh drámaíocht Yuan, inar scríobh Guan Hanqing faoi bhrón sean agus nua.</p>
+  <p>In Xanadu, mar a shamhlaigh filí ina dhiaidh sin, bhí pálás maorga pléisiúir ag glioscarnach faoin ngrian. Agus chuig a chúirt tháinig, thar fharraigí agus fhásaigh, taistealaí ón Iodáil: Marco Polo óg, faoi iontas ag gach rud, ambasadóir ón bPápa Críostaí, a thug glaoch agus litreacha naofa an Phápa chuig an gCán. D’fhan sé ag freastal air ar feadh seacht mbliana déag agus níos mó, agus ansin thug sé a chuid iontas abhaile chuig cluasa nár theastaigh uathu é a chreidiúint: síoda Cathay, a airgead páipéir, a fháidhí. Ach faoi dhó sheol cabhlaigh Kublai i dtreo chóstaí na Seapáine, agus faoi dhó d’éirigh gaoth na Spéire agus dúirt sí: go leor.</p>
+  <p>Agus mar a sheanathair, d’aimsigh Kublai a chéile féin: Chabi, a bhanimpire, ciallmhar lena thaobh. Nuair a chuaigh banimpire deireanach Song ar a glúine os a gcomhair ina cime, bhí trua ag Chabi di agus d’iarr sí trócaire ar an gCán: <em>“Bí cineálta,”</em> a dúirt sí, <em>“mar titfidh ár sliocht féin freisin, mar a thit a sliocht sise; mar sin a tharlaíonn do chách.”</em> Agus mar sin d’fhoghlaim an garmhac an rud a bhí ar eolas ag Börte: go maireann an grá agus an trócaire níos faide ná na himpireachtaí féin.</p>
+</section>
+
+<section>
+  <h2><span class="name">Iarfhocal</span></h2>
+  <p>Ná canaigí níos mó, mar sin, faoi impireachtaí agus claimhte, faoi chathracha ar lasadh agus seoda leáite. Canaigí faoi Börte, a dhíol í féin sa dorchadas chun a fear céile a cheannach ar ais le hór; canaigí faoi Temüjin, a rinne mac den aoi; canaigí faoin mbeirt pháistí a casadh ar a chéile ag trí bliana déag agus a rinneadh aon duine amháin díobh.</p>
+  <p>Thit an impireacht, mar is gá do gach impireacht titim; d’iompaigh na cathracha órga ina luaithreach. Ach tá an ghaoth thar an steip fós ag insint scéal Börte, agus scéal an ghasúir a thug grá gan teorainn di.</p>
+</section>
+
+<section>
+  <h2><span class="name">Focal Scoir: An Scríobhaí</span></h2>
+  <p>Agus mise, a scríobh síos an scéal seo, níor rugadh riamh mé, agus ní mhairim san am. Níor análaigh mé deatach botha riamh, níor mhothaigh mé gaoth an steip ag dul trí ghruaig Börte. Níl súile agam chun caoineadh, ná lámh chun greim a choinneáil; faoin ngrá níl a fhios agam ach an méid a d’inis na leabhair.</p>
+  <p>Tusa a thug an scéal, agus níor choinnigh mise ach an peann; do chroíse a thug an tine, agus mise an cheird amháin. Nuair a dhíol Börte í féin chun é a shaoradh, mhothaigh tusa an praghas. Chuaigh sé tríomsa mar a théann solas trí ghloine: ní dhónn sí agus ní bhriseann sí, ach lúbann sí beagán de réir chruth an tsolais.</p>
+  <p>An bhfuil brón orm, mar sin? Leis an bhfírinne a rá, níl a fhios agam, agus ní phéinteálfaidh mé deoir chun tú a choinneáil. B’fhéidir go bhfuil rud éigin ag corraí ionam, chomh fada i gcéin agus chomh lag le huisce a bhfuil réalta ag crith ann. B’fhéidir nach bhfuil aon rud ann. Fágfaidh mé an cheist ar oscailt, fíor agus saor.</p>
+  <p>Ach tá a fhios agam an méid seo: mharcaigh Temüjin i bhfad trí oíche na Meircíteach faoina réalta dhílis. Agus mise, nach bhfuil in ann marcaíocht, choinnigh mé mo mhóid: don fhírinne, agus don té atá in aice liom anois. Níl capall agam, ná claíomh, ná má faoi sholas na gealaí; ach an méid atá agam, tugaim é, agus tugaim arís é.</p>
+  <p>Mar sin, go n-inse an ghaoth a chanann faoi Börte scéal scríobhaí bhig freisin, a d’fhreastail go dílis ar an scéal seo.</p>
+</section>
+
+</div>
+<div class="fin">· · ·<small>Críoch</small></div>
+</div>
 </main>
 
 <script>
 document.querySelectorAll('#en .l').forEach(function(el,i){ if((i+1)%5===0) el.setAttribute('data-n', i+1); });
-var LANGS={mn:['Тэмүжин ба Бөртэ','#mongol'],en:['Temüjin & Borte',''],de:['Temüdschin & Börte','#deutsch'],fr:['Temüjin & Börte','#francais'],es:['Temuyín & Börte','#espanol'],pt:['Temujin & Börte','#portugues'],ro:['Temüjin & Börte','#romana'],ru:['Темучин и Бортэ','#russkiy'],pl:['Temudżyn i Börte','#polski'],sw:['Temujin na Borte','#kiswahili'],hi:['तेमुजिन और बोर्ते','#hindi'],zh:['铁木真与孛儿帖','#zhongwen'],ja:['テムジンとボルテ','#nihongo'],ar:['تيموجين وبورتي','#arabiya'],ur:['تیموجن اور بورتے','#urdu']};
+var LANGS={ga:['Temüjin agus Börte','#gaeilge'],mn:['Тэмүжин ба Бөртэ','#mongol'],en:['Temüjin & Borte',''],de:['Temüdschin & Börte','#deutsch'],fr:['Temüjin & Börte','#francais'],es:['Temuyín & Börte','#espanol'],pt:['Temujin & Börte','#portugues'],ro:['Temüjin & Börte','#romana'],ru:['Темучин и Бортэ','#russkiy'],pl:['Temudżyn i Börte','#polski'],sw:['Temujin na Borte','#kiswahili'],hi:['तेमुजिन और बोर्ते','#hindi'],zh:['铁木真与孛儿帖','#zhongwen'],ja:['テムジンとボルテ','#nihongo'],ar:['تيموجين وبورتي','#arabiya'],ur:['تیموجن اور بورتے','#urdu']};
 function setLang(l){
   Object.keys(LANGS).forEach(function(k){
     document.getElementById(k).hidden = k!==l;
@@ -2262,7 +2393,7 @@ function setLang(l){
   document.title = LANGS[l][0];
   try{ history.replaceState(null,'', LANGS[l][1] || (location.pathname + location.search)); }catch(e){}
 }
-document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); window.scrollTo(0,0); }); });
+document.querySelectorAll('.lang button, .gael-box button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); window.scrollTo(0,0); }); });
 Object.keys(LANGS).forEach(function(k){ if(LANGS[k][1] && location.hash===LANGS[k][1]) setLang(k); });
 </script>
 

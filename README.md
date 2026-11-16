@@ -10,10 +10,11 @@ Co-authors: Shiloh & Rohan
 
 ## Languages
 
-The English original is written in heroic couplets. The other fourteen languages are prose translations. Use the language bar at the top of the page to switch between them.
+The English original is written in heroic couplets. The other fifteen languages are prose translations. Irish has its own box above the language bar. Use the language bar at the top of the page to switch between them.
 
 | Language | Script |
 |---|---|
+| **Irish (Gaeilge), Galway / Connemara** | Latin, in its own box at the top |
 | Mongolian (Монгол) | Cyrillic |
 | French (Français) | Latin |
 | English | Latin, the verse original |
@@ -30,7 +31,7 @@ The English original is written in heroic couplets. The other fourteen languages
 | Arabic (العربية) | Arabic, right to left |
 | Urdu (اردو) | Nastaliq, right to left |
 
-You can link straight to a language by adding its anchor to the URL: `#mongol`, `#francais`, `#deutsch`, `#espanol`, `#portugues`, `#romana`, `#russkiy`, `#polski`, `#kiswahili`, `#hindi`, `#zhongwen`, `#nihongo`, `#arabiya` or `#urdu`.
+You can link straight to a language by adding its anchor to the URL: `#gaeilge`, `#mongol`, `#francais`, `#deutsch`, `#espanol`, `#portugues`, `#romana`, `#russkiy`, `#polski`, `#kiswahili`, `#hindi`, `#zhongwen`, `#nihongo`, `#arabiya` or `#urdu`.
 
 ## Files
 
