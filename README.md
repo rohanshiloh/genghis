@@ -10,7 +10,7 @@ Co-authors: Shiloh & Rohan
 
 ## Languages
 
-The English original is written in heroic couplets. The other fifteen languages are prose translations. Irish has its own box above the language bar. Use the language bar at the top of the page to switch between them.
+The English original is written in heroic couplets. The other nineteen languages are prose translations. Irish has its own box above the language bar. Use the language bar at the top of the page to switch between them.
 
 | Language | Script |
 |---|---|
@@ -19,6 +19,7 @@ The English original is written in heroic couplets. The other fifteen languages 
 | French (Français) | Latin |
 | English | Latin, the verse original |
 | German (Deutsch) | Latin |
+| Dutch (Nederlands) | Latin |
 | Spanish (Español) | Latin |
 | Portuguese (Português) | Latin |
 | Romanian (Română) | Latin |
@@ -28,10 +29,13 @@ The English original is written in heroic couplets. The other fifteen languages 
 | Hindi (हिन्दी) | Devanagari |
 | Chinese (中文) | Simplified Chinese |
 | Japanese (日本語) | Japanese |
+| Persian (فارسی) | Nastaliq, right to left; prose with verse couplets |
 | Arabic (العربية) | Arabic, right to left |
+| Hebrew (עברית) | Hebrew, right to left |
+| Aramaic (ܐܪܡܝܐ) | Classical Syriac, right to left (a shorter telling) |
 | Urdu (اردو) | Nastaliq, right to left |
 
-You can link straight to a language by adding its anchor to the URL: `#gaeilge`, `#mongol`, `#francais`, `#deutsch`, `#espanol`, `#portugues`, `#romana`, `#russkiy`, `#polski`, `#kiswahili`, `#hindi`, `#zhongwen`, `#nihongo`, `#arabiya` or `#urdu`.
+You can link straight to a language by adding its anchor to the URL: `#gaeilge`, `#mongol`, `#francais`, `#deutsch`, `#nederlands`, `#espanol`, `#portugues`, `#romana`, `#russkiy`, `#polski`, `#kiswahili`, `#hindi`, `#zhongwen`, `#nihongo`, `#farsi`, `#arabiya`, `#ivrit`, `#aramaya` or `#urdu`.
 
 ## Files
 
