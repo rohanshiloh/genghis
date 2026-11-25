@@ -6,7 +6,7 @@
 <title>Temüjin &amp; Borte</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Nastaliq+Urdu:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&family=Noto+Serif+SC:wght@400;600&family=Noto+Serif+JP:wght@400;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Nastaliq+Urdu:wght@400;600&family=Noto+Serif+Devanagari:wght@400;600&family=Noto+Serif+SC:wght@400;600&family=Noto+Serif+JP:wght@400;600&family=Amiri:ital,wght@0,400;0,700;1,400&family=Frank+Ruhl+Libre:wght@400;600&family=Noto+Sans+Syriac:wght@400;600&display=swap">
 <style>
 :root{
   --ground:#EDF0F3; --ink:#1C2230; --muted:#5E6878; --accent:#2E5A87; --gold:#9A7A34; --rule:#C8D0DA; --gael:#1F6B48; --gael-wash:#E3EEE8;
@@ -92,6 +92,36 @@ h2 .name{font-family:"IM Fell English",Georgia,serif;font-style:italic;letter-sp
 .gael-box button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 #ga h2 .num, #ga .eyebrow{color:var(--gael)}
 #ga .prose h2 + p::first-letter, #ga h1 .amp{color:var(--gael)}
+#he, #he h1, #he h2, #he h2 .name, #he .byline, #he .eyebrow, #he .sub, #he .fin, .lang button[lang="he"]{font-family:"Frank Ruhl Libre","Times New Roman",serif;letter-spacing:0}
+#he h2 .name, #he .sub, #he .byline, #he em, #he .fin small, #he h1 .amp{font-style:normal}
+#he em{color:var(--accent)}
+#he .prose p{line-height:1.85;font-size:1.05rem;text-align:justify}
+#he .prose p + p{text-indent:1.6em}
+#he .prose h2 + p::first-letter{font:inherit;color:inherit;float:none;padding:0}
+.lang{flex-direction:column;align-items:center;gap:.9rem}
+.lang-group{display:flex;flex-direction:column;align-items:center;gap:.35rem;width:100%}
+.lang-label{font-family:"IM Fell English",Georgia,serif;font-style:italic;color:var(--gold);font-size:.85rem}
+.lang-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem}
+#syc, #syc h1, #syc h2, #syc h2 .name, #syc .byline, #syc .eyebrow, #syc .sub, #syc .fin, .lang button[lang="syc"]{font-family:"Noto Sans Syriac","Estrangelo Edessa",serif;letter-spacing:0}
+#syc h2 .name, #syc .sub, #syc .byline, #syc em, #syc .fin small, #syc h1 .amp{font-style:normal}
+#syc em{color:var(--accent)}
+#syc .prose p{line-height:2.1;font-size:1.08rem;text-align:justify}
+#syc .prose p + p{text-indent:1.6em}
+#syc .prose h2 + p::first-letter{font:inherit;color:inherit;float:none;padding:0}
+#syc .note{font-family:"EB Garamond",serif;direction:ltr;text-align:center;font-style:italic;color:var(--muted);font-size:.85rem;margin-top:.8rem}
+#fa, #fa h1, #fa h2, #fa h2 .name, #fa .byline, #fa .eyebrow, #fa .sub, #fa .fin, .lang button[lang="fa"]{font-family:"Noto Nastaliq Urdu","IranNastaliq","Nastaliq Navees",serif;letter-spacing:0}
+#fa h1{line-height:1.8;font-size:clamp(2rem,6.5vw,2.9rem)}
+#fa h2{font-size:1rem}
+#fa h2 .name{font-style:normal;font-size:1.2rem}
+#fa .sub, #fa .byline, #fa em, #fa .fin small, #fa h1 .amp{font-style:normal}
+#fa em{color:var(--accent)}
+#fa .prose p{line-height:2.4;font-size:1.02rem;text-align:justify}
+#fa .prose p + p{text-indent:1.6em}
+#fa .prose h2 + p::first-letter{font:inherit;color:inherit;float:none;padding:0}
+#fa .beyt{display:grid;grid-template-columns:1fr 1fr;gap:0 2.2rem;margin:1.2rem auto 1.4rem;max-width:30rem;color:var(--accent);line-height:2.5;font-size:1.02rem}
+#fa .beyt span:first-child{text-align:left}
+#fa .beyt span:last-child{text-align:right}
+@media (max-width:640px){#fa .beyt{grid-template-columns:1fr;text-align:center}#fa .beyt span{text-align:center!important}}
 </style>
 
 </head>
@@ -102,21 +132,55 @@ h2 .name{font-family:"IM Fell English",Georgia,serif;font-style:italic;letter-sp
   <button type="button" id="btn-ga" data-lang="ga" aria-pressed="false" lang="ga">Gaeilge</button>
 </div>
 <nav class="lang" aria-label="Language">
-  <button type="button" id="btn-mn" data-lang="mn" aria-pressed="false" lang="mn">Монгол</button>
-  <button type="button" id="btn-fr" data-lang="fr" aria-pressed="false">Français</button>
-  <button type="button" id="btn-en" data-lang="en" aria-pressed="true">English</button>
-  <button type="button" id="btn-de" data-lang="de" aria-pressed="false">Deutsch</button>
-  <button type="button" id="btn-es" data-lang="es" aria-pressed="false">Español</button>
-  <button type="button" id="btn-pt" data-lang="pt" aria-pressed="false">Português</button>
-  <button type="button" id="btn-ro" data-lang="ro" aria-pressed="false">Română</button>
-  <button type="button" id="btn-ru" data-lang="ru" aria-pressed="false" lang="ru">Русский</button>
-  <button type="button" id="btn-pl" data-lang="pl" aria-pressed="false">Polski</button>
-  <button type="button" id="btn-sw" data-lang="sw" aria-pressed="false">Kiswahili</button>
-  <button type="button" id="btn-hi" data-lang="hi" aria-pressed="false" lang="hi">हिन्दी</button>
-  <button type="button" id="btn-zh" data-lang="zh" aria-pressed="false" lang="zh">中文</button>
-  <button type="button" id="btn-ja" data-lang="ja" aria-pressed="false" lang="ja">日本語</button>
-  <button type="button" id="btn-ar" data-lang="ar" aria-pressed="false" lang="ar">العربية</button>
-  <button type="button" id="btn-ur" data-lang="ur" aria-pressed="false" lang="ur">اردو</button>
+  <div class="lang-group" role="group" aria-label="Steppe & East Asia">
+    <span class="lang-label">Steppe &amp; East Asia</span>
+    <div class="lang-row">
+      <button type="button" id="btn-mn" data-lang="mn" aria-pressed="false" lang="mn">Монгол</button>
+      <button type="button" id="btn-zh" data-lang="zh" aria-pressed="false" lang="zh">中文</button>
+      <button type="button" id="btn-ja" data-lang="ja" aria-pressed="false" lang="ja">日本語</button>
+    </div>
+  </div>
+  <div class="lang-group" role="group" aria-label="European">
+    <span class="lang-label">European</span>
+    <div class="lang-row">
+      <button type="button" id="btn-fr" data-lang="fr" aria-pressed="false">Français</button>
+      <button type="button" id="btn-en" data-lang="en" aria-pressed="true">English</button>
+      <button type="button" id="btn-de" data-lang="de" aria-pressed="false">Deutsch</button>
+      <button type="button" id="btn-nl" data-lang="nl" aria-pressed="false">Nederlands</button>
+      <button type="button" id="btn-es" data-lang="es" aria-pressed="false">Español</button>
+      <button type="button" id="btn-pt" data-lang="pt" aria-pressed="false">Português</button>
+      <button type="button" id="btn-ro" data-lang="ro" aria-pressed="false">Română</button>
+      <button type="button" id="btn-ru" data-lang="ru" aria-pressed="false" lang="ru">Русский</button>
+      <button type="button" id="btn-pl" data-lang="pl" aria-pressed="false">Polski</button>
+    </div>
+  </div>
+  <div class="lang-group" role="group" aria-label="East Mediterranean">
+    <span class="lang-label">East Mediterranean</span>
+    <div class="lang-row">
+      <button type="button" id="btn-he" data-lang="he" aria-pressed="false" lang="he">עברית</button>
+      <button type="button" id="btn-syc" data-lang="syc" aria-pressed="false" lang="syc">ܐܪܡܝܐ</button>
+    </div>
+  </div>
+  <div class="lang-group" role="group" aria-label="Middle Eastern">
+    <span class="lang-label">Middle Eastern</span>
+    <div class="lang-row">
+      <button type="button" id="btn-fa" data-lang="fa" aria-pressed="false" lang="fa">فارسی</button>
+      <button type="button" id="btn-ar" data-lang="ar" aria-pressed="false" lang="ar">العربية</button>
+    </div>
+  </div>
+  <div class="lang-group" role="group" aria-label="Subcontinent">
+    <span class="lang-label">Subcontinent</span>
+    <div class="lang-row">
+      <button type="button" id="btn-hi" data-lang="hi" aria-pressed="false" lang="hi">हिन्दी</button>
+      <button type="button" id="btn-ur" data-lang="ur" aria-pressed="false" lang="ur">اردو</button>
+    </div>
+  </div>
+  <div class="lang-group" role="group" aria-label="African">
+    <span class="lang-label">African</span>
+    <div class="lang-row">
+      <button type="button" id="btn-sw" data-lang="sw" aria-pressed="false">Kiswahili</button>
+    </div>
+  </div>
 </nav>
 <div id="en" lang="en">
 <header>
@@ -2379,11 +2443,495 @@ h2 .name{font-family:"IM Fell English",Georgia,serif;font-style:italic;letter-sp
 </div>
 <div class="fin">· · ·<small>Críoch</small></div>
 </div>
+
+<div id="he" lang="he" dir="rtl" hidden>
+<header>
+  <div class="byline">כתבו יחד: שילה ורוהאן</div>
+  <div class="eyebrow">אפוס בפרוזה</div>
+  <h1>טמוג'ין <span class="amp">ו</span>בורטה</h1>
+  <p class="sub">הדברים שתעשה למען אישה שאתה אוהב</p>
+  <svg class="horizon" viewBox="0 0 300 14" aria-hidden="true"><path d="M0 10 Q60 6 120 9 T240 8 T300 10"/><circle cx="150" cy="4" r="3"/></svg>
+</header>
+<div class="prose">
+<section>
+  <h2><span class="name">פתיחה</span></h2>
+  <p>שירי, הו מוזה, על טמוג'ין ועל בורטה היפה; שירי על אהבה שפרחה במקום שבו העשב נוגע בשמיים שאין להם סוף; שירי על השבועות שלחשו שני ילדים זה לזו, זמן רב לפני שנולדה האימפריה הגדולה ביותר בעולם.</p>
+</section>
+
+<section>
+  <h2><span class="num">שיר ראשון</span><span class="name">האירוסין</span></h2>
+  <p>לפני עלות השחר, כשהכפור פרש כסף על פני הערבה, הושיב יסוגאי את בנו על הסוס ואחז במושכות. מזרחה רכבו בין העשב הלוחש, אל אוהלי הלבד של בני אונגירט. בדרך יצא לקראתם דאי סצ'ן, זקן שחורפים רבים הלבינו את שערו, וסיפר להם את חלום הלילה הקודם: בז לבן, לבן כשלג שעל פסגות חנטי, ירד מן השמיים ונחת על פרק ידו; בטופר אחד אחז בשמש, זהובה וזוהרת, ובטופר השני באור הכסוף של הירח. <em>"הבז ההוא דיבר עליך,"</em> אמר לנער; אחר כך הביט בו ארוכות וחייך: <em>"יש אש בעיניו, ופניו כשחר."</em> אז קרא לבתו. בורטה נכנסה, בת שלוש־עשרה, והישירה מבט אל הנער באומץ שלא היה לשום נערה לפניה. בין שני הילדים עבר דבר־מה שאין לו שם: כמו הרוח המלטפת את העשב בלי להיראות, ובכל זאת בהיר כלהבה.</p>
+  <p>האבות תקעו כף; האירוסין נחתמו. כמנהג, נשאר הנער אצל משפחת הכלה, ויסוגאי חזר לבדו. בדרך ראה את מדורות המשתה של הטטרים. חוק הכנסת האורחים קדוש בערבה, ולכן ישב ביניהם ושתה. אבל הטטרים זיהו את אויבם הישן, ובגביעו התפתל הרעל כנחש. כשהוא גוסס הגיע לאוהלו ושלח לקרוא לבנו. כשהגיע השליח, תם אושרו הקצר של הנער. הוא השאיר לארוסתו שבועה אחת, לוהטת ואמיתית: <em>"יהיה אשר יהיה, אחזור בשבילך."</em></p>
+</section>
+
+<section>
+  <h2><span class="num">שיר שני</span><span class="name">החץ</span></h2>
+  <p>אחר כך באו שנות הרעב. השבט הפנה להם עורף והפקיר את האלמנה ואת בניה לישימון. הם חפרו שורשים, דגו בנהר הקפוא, וחיו על רעב, על תקווה ועל חלומות. אבל בגטר, האח למחצה הבכור, בן לאם אחרת, לקח כל מה שחפץ בו: דג, עפרוני, מקום ליד האש שלא היה שלו. עד שיום אחד התגנבו טמוג'ין וקסאר, פניהם קודרות וקשתות בידיהם, אל הגבעה שעליה שמר בגטר על הסוסים. הוא לא ברח. הוא אמר רק מילה אחרונה אחת: <em>"חוסו על בלגוטאי."</em> אז שרו החצים, ודם האח זרם במורד המדרון העשבוני.</p>
+  <p>אמם הואלון זעקה מכאב: <em>"זאבים! אתם קורעים את הצל של עצמכם!"</em> את המילים האלה נשא טמוג'ין עד יומו האחרון, ושום כיבוש בעולם לא הקל על כובדן.</p>
+</section>
+
+<section>
+  <h2><span class="num">שיר שלישי</span><span class="name">האנדה</span></h2>
+  <p>ובכל זאת, לאורך אותן שנים מרות, זהרה ידידות אחת, כשמש חורף על אבן קרה. על נהר אונון הקפוא החליקו שני נערים, בני אחת־עשרה בקושי, צוחקים ונועזים, עצמות קרסול על הקרח המנצנץ, והחליפו אותן ביניהם בלי לחשוב פעמיים. וכשהגיע האביב, החליפו גם חיצים שראשיהם גולפו מקרן עגל, ששרקו בעופם. כך נעשו אנדה: אחים בברית, נפש בנפש; שני חצאים, אומרים הזקנים, שיחד הם שלם אחד. <em>"לעולם לא ניפרד,"</em> נשבעו תחת השמיים הרחבים. <em>"איש מאיתנו לא ייתן לרעהו ליפול, איש מאיתנו לא ייתן לרעהו למות."</em></p>
+</section>
+
+<section>
+  <h2><span class="num">שיר רביעי</span><span class="name">הפשיטה</span></h2>
+  <p>בן שש־עשרה רכב טמוג'ין לבדו מזרחה, בלי לדעת אם בורטה עדיין מחכה לו או שכבר נישאה לאחר. והיא עמדה שם: היא חיכתה, כפי שהבטיחה. אמה הביאה נדוניה נדירה ויקרה: מעיל פרוות צובל, שחור כשערה של בורטה. אבל טמוג'ין לא שמר אותו לעצמו. הוא הביא אותו אל טוגרול, האנדה של אביו, וכרע ברך לפניו כפי שכרע אביו בשעתו. ואמר טוגרול: <em>"תמורת המעיל הזה אאסוף את עמך המפוזר ואעשה אותך לחאן."</em> כך עתידה הייתה מתנתה של בורטה, נדוניית ידה, לפדות אותה יום אחד מארץ המרקיטים.</p>
+  <p>אבל האושר אינו מאריך ימים בערבה. הנקמה משוטטת בערבה על פרסות סבלניות. לפני עלות השחר באו המרקיטים לגבות חוב ישן: פעם חטף יסוגאי כלה משבטם, ועכשיו רצו את אשת בנו, ולעקור יחד איתה את ליבו. טמוג'ין נמלט אל רמות בורקן חלדון. אבל בורטה, שהתחבאה בעגלת שוורים, נמצאה ונלקחה צפונה, שלל בידי המרקיטים, ואבק הערבה בשערה ובעיניה.</p>
+  <p>לא היו לו אז צבא, ולא עושר, ולא שם. היו לו שבועה, ולהבה בליבו. הוא רכב אל אוהלו של טוגרול, ואחר כך אל ג'מוקה, אחיו בברית, הנאמן והמנוסה. לאור הירח הסתערו על האויב, במקום שבו בערו מדורות המרקיטים נמוך וחלש. בין ההמון הנמלט דהר וקרא בשמה: <em>"בורטה! בורטה!"</em> והיא שמעה, ורצה, ותחת אור הירח החיוור אחזה במושכותיו. הוא משך אותה אליו וחיבק אותה כל הלילה.</p>
+</section>
+
+<section>
+  <h2><span class="num">שיר חמישי</span><span class="name">האורח</span></h2>
+  <p>אבל ברחמה נע ילד שאיש לא ידע מי אביו, וכשנולד, גדלו הלחישות יחד איתו. <em>"של מי הדם הזה?"</em> איש לא יכול היה לומר בוודאות. טמוג'ין קרא לילד ג'וצ'י, כלומר "אורח", והכריז לפני השבט כולו: <em>"זהו בני בכורי."</em> במקום שבו הדם היה החוק, הוא בחר באהבה. ואולי כך פרע חוב ישן: מי שהרג פעם אח, אימץ עכשיו בן.</p>
+</section>
+
+<section>
+  <h2><span class="num">שיר שישי</span><span class="name">הכופר</span></h2>
+  <p>כשם שמכרו את יוסף אחיו, כך בגדו בטמוג'ין קרוביו קשי הלב. בני טאיצ'יוד, שפחדו מגור הזאב שגדל, תפסו אותו ונטלו ממנו את השליטה בגופו: עול מעץ לגש נסגר על צווארו ועל פרקי ידיו, וטרגוטאי עמד לצידו ולעג לו. מאוהל לאוהל העבירו אותו, עבד, בהמה, ישן בזבל ורעב לצד משתאותיהם.</p>
+  <p>ולבורטה, התינוק בחיקה, לא היו לא עדרים ולא כסף, לא שבט ולא מנוחה. הזהב פותח כל שער בערבה, ולה לא היה ממנו כלל. היה לה רק את עצמה. ולכן, בחשכה, מכרה את מה שאפשר היה למכור, נשאה את החרפה ולא אמרה עליה מילה מעולם, ואספה מטבע אחר מטבע את מחירו של בעלה, בעוד ג'וצ'י, האורח, ישן צמוד לליבה.</p>
+  <p>היא קנתה את השומר, קנתה את עיני הצופה, קנתה את הרועה שעשה עצמו חירש לכל זעקה. ובליל חג ירח הקיץ שברו את העול ושחררו אותו, ברגע האחרון. הוא ראה את פניה, ראה את הילד, והבין את המחיר ששילמה; הוא לא שאל איך, ולא למי. <em>"נשבעת שתחזור בשבילי,"</em> אמרה. <em>"ואני לא רציתי לחכות."</em> אז הרכין את ראשו העייף ולמד את מה שלמד יוסף בארץ פרעה: לא הדם גואל את האדם שנפל, אלא האהבה.</p>
+</section>
+
+<section>
+  <h2><span class="num">שיר שביעי</span><span class="name">ארבעת הבנים</span></h2>
+  <p>ארבעה בנים ילדה לו תחת השמיים הרחבים: ג'וצ'י, אוגדיי, צ'גטאי וטולוי, הצעיר שבהם, שנולד כשחלפו שנות הרעב והמרירות. מכולם, ג'וצ'י רכב בעוז הרב ביותר ושפט בצדק הרב ביותר; אנשים הלכו אחריו בשלג וברוח הקפואה. אבל צ'גטאי לא שכח אף שקר שסיפרו הלחישות, ולא נתן לאף אחד מהם למות. וכשהאחים נעצו זה בזה מבטים זועמים מעבר למדורה, ראה אביהם אש אחרת, עתיקה יותר: גבעה, דג, חץ וזעקה, ואת <em>"זאבים!"</em> של הואלון תחת השמיים.</p>
+</section>
+
+<section>
+  <h2><span class="num">שיר שמיני</span><span class="name">מלחמת האחים</span></h2>
+  <p>אבל שום שמיים אינם סובלים שתי שמשות בוערות, והאחים בברית נעשו אויבים. ג'מוקה משל לפי ייחוס ושם; טמוג'ין רומם את הפשוטים אל התהילה. בדלאן בלג'וט ניצח ג'מוקה בקרב, אבל ציווה להרתיח את שבוייו בשבעים קדרות, ומחצית מצבאו, בשאט נפש, חצתה את הערבה אל טמוג'ין ולא שבה עוד.</p>
+  <p>לבסוף, תחת דגלי הנאימנים שנאספו, נלחם ג'מוקה את קרבו האחרון; הקוביות הוטלו. בצ'קירמאות, על צלע ההר, נשברו הנאימנים בלילה, נפלו ומתו. ג'מוקה נמלט עם חמישה אנשים, ואותם חמישה כבלו אותו, מכרו אותו ושיקרו. אבל החאן אמר: <em>"מי שמוכר את אדונו בזהב, ימכור גם אותי,"</em> וציווה להוציא את כולם להורג.</p>
+  <p>אחר כך פנה אל האנדה שלו, הכבול והמותש, ואמר: <em>"רכב איתי, כמו באותו בוקר קפוא."</em> אבל ג'מוקה השיב: <em>"השמיים נושאים שמש אחת בלבד. לא אחיה כצל של השמש שלך."</em> אז חתך טמוג'ין בעצמו, בחרבו שלו, את החבלים שקשרו ידי הבוגדים, והשיב לו את סוסו, את קשתו ואת חייו. <em>"לך, אתה חופשי,"</em> אמר. <em>"אל יהיה עוד ריב בינינו."</em> וכמו פעם, הניח בכף ידו עצם קרסול מגדת האונון הקפואה. ג'מוקה רכב לבדו אל תוך הלילה, והחאן הביט אחריו ארוכות, עד שנעלם מן העין.</p>
+  <p>סוף־סוף הייתה הערבה לאחת תחת חאן אחד, ומשם התחיל השם ג'ינגיס חאן.</p>
+</section>
+
+<section>
+  <h2><span class="num">שיר תשיעי</span><span class="name">החשבון</span></h2>
+  <p>השנים חלפו; הנער הנרדף נעשה גדול, והשבטים המפוזרים השתחוו לפני כוחו. אבל פצע אחד נשאר, חוב אחד עוד לא נפרע: פשיטת המרקיטים, הכלה החטופה. עם הטומנים שלו מאחוריו רכב צפונה, עשרת אלפים פרשים בעקבות המרקיטים, לאורך נהר סלנגה, דרך שלג ושיטפון, ושילם להם מידה כנגד מידה, דם תחת דם. אף אוהל לא ניצל, אף דגל לא התנופף עוד; הוא נתן אפילו לשמם של המרקיטים למות. ובורטה, שעמדה בפתח הלבד של אוהלה, ראתה אותו שב, וידעה בשביל מי נעשה כל זה.</p>
+</section>
+
+<section>
+  <h2><span class="num">שיר עשירי</span><span class="name">השליחים</span></h2>
+  <p>הרחק במערב, מעבר להרים ולחולות, השתרעה פרס, עשירה, פנינת כל הארצות. שם ישב השאה מוחמד על כס המלכות המוזהב שלו וספר אוצרות שלעולם לא יהיו באמת שלו. החאן שלח שליחים נושאי משי וירקן, להציע שלום ולפתוח את דרכי המסחר.</p>
+  <p>השאה הביט במתנות וצחק בבוז: <em>"זהו המס של רועה מלידה? עוד זהב! המתנות שלכם עלובות!"</em> לשליחים לא היה עוד דבר, והם השתחוו שוב. אז ציווה להרוג אותם במקום, ושלח את ראשיהם, בשקים, בחזרה אל אוהל הלבד של החאן.</p>
+</section>
+
+<section>
+  <h2><span class="num">שיר אחד־עשר</span><span class="name">הזהב המותך</span></h2>
+  <p>אז עלה טמוג'ין אל רמות בורקן חלדון, צם והתפלל לטנגרי יומם ולילה. וכשירד, ירדה איתו הסערה: מאה אלף פרשים, נחיל אחד עצום. בוכרה נפלה, וסמרקנד, ועוד רבות; אורגנץ', שבה הוביל ג'וצ'י את אנשיו למלחמה. הערים בערו כעשב בשרפות הסתיו, מנהר אמו דריה ועד ערפילי הים הכספי הרחוקים.</p>
+  <p>את השאה גררו לפני הכובש, וזה שאל אותו: <em>"לזהב הרעבת? אם כן, שתה לשובע."</em> הם התיכו את האוצר, והזהב נשפך אל הגרון החמדן. כך תם האיש שמדד את ערכו של אדם בזהב: רעבונו שבע, וגרונו הבוער התקרר.</p>
+</section>
+
+<section>
+  <h2><span class="num">שיר שנים־עשר</span><span class="name">הקבר</span></h2>
+  <p>החאן הזקין; זקנו הלבין ככפור, ולצידו נשארה בורטה, ושערה ככסף. הוא מת בדרך, כפי שמתים לוחמים, ועד מהרה לא ידע שום אדם חי היכן הוא קבור: אלף סוסים רמסו את קברו עד שנמחק, כדי שמקום מנוחתו לא יימצא לעולם.</p>
+</section>
+
+<section>
+  <h2><span class="num">שיר שלושה־עשר</span><span class="name">בשערי וינה</span></h2>
+  <p>באטו, בנו של האורח, יצא להוכיח שזרעו של ג'וצ'י ראוי לאותה אהבה. עם סובוטאי הזקן, זאב המלחמה האפור, חצה את הוולגה; קייב, המפורסמת מימי קדם, נפלה באש, כיפות הזהב שלה השחירו, ואיש מאלה שפגשו את הפרשים לא שב עוד.</p>
+  <p>אחר כך עברו במעברי הקרפטים המושלגים והסתערו על בלה, מלך הונגריה. במוהי, שם מתפתל נהר שאיו, מצאו אבירי העולם הנוצרי קץ מר: מבצר העגלות שלהם עלה באש, הגשר נכבש, והונגריה שכבה שבורה תחת השמש.</p>
+  <p>והלאה עוד מערבה, ופשט בוערת מאחוריהם, הגיעו הפרשים המונגולים עד שערי אוסטריה. לפני חומות וינה החוויר המערב מאימה, וכל פעמון כנסייה צלצל למתי אירופה. אז בא רוכב מן המזרח ואמר: <em>"החאן הגדול אוגדיי, דודך, מת."</em> ובאטו הפנה את סוסיו מזרחה, ואירופה, שכבר כרעה על ברכיה, ניצלה.</p>
+</section>
+
+<section>
+  <h2><span class="num">שיר ארבעה־עשר</span><span class="name">קובלאי חאן <span lang="zh">忽必烈</span></span></h2>
+  <p>אבל מטולוי, הצעיר בבנים שילדה, יצא נער שנועד למשול בעולם שלם, ויותר.</p>
+  <p>קובלאי, הנכד, עבר את החומה הגדולה, אהב את הארץ שכבש, וכבש את כולה. הוא ביקש עצה מחכמי סין, וקרא לתקופתו בשם מתוך ספר התמורות: <em>יואן</em>, כלומר המקור, המעיין הראשון; והכפיף את רצון המונגולים למהלך השמיים. לפי תוכניותיו של ליו בינגז'ונג קמה דאדו, עירו הגדולה של החאן, עם חומותיה, אגמיה ושדרות האבן שלה: האדמה שממנה צמחה בייג'ינג של היום.</p>
+  <p>שושלת סונג נפלה; הצפון והדרום היו שוב לאחד, לראשונה מאז קץ תקופת טאנג הזוהרת. הוא האריך את התעלה הגדולה עד שערי דאדו, כדי שאורז הדרום יזין את הצפון; ציווה להדפיס כסף נייר, קל כאוויר, שהסוחרים נשאו לכל מקום; ועל הבמה פרחה דרמת יואן, שבה כתב גואן האנצ'ינג על צער ישן וחדש.</p>
+  <p>בקסנאדו, כפי שחלמו משוררים מאוחרים יותר, נצץ בשמש ארמון תענוגות מפואר. ואל חצרו הגיע, מעבר לימים ולמדבריות, נוסע מאיטליה: מרקו פולו הצעיר, המשתאה לכל דבר, שגריר האפיפיור הנוצרי, שהביא אל החאן את קריאתו ואת מכתביו הקדושים. הוא נשאר לשרת אותו שבע־עשרה שנה ויותר, ואחר כך נשא את נפלאותיו הביתה, אל אוזניים שלא רצו להאמין: המשי של קתאי, כסף הנייר שלה, מגידי העתידות שלה. אבל פעמיים הפליגו צי קובלאי אל חופי יפן, ופעמיים קמה רוח השמיים ואמרה: די.</p>
+  <p>וכמו סבו, מצא גם קובלאי את בחירת ליבו: צ'אבי, הקיסרית שלו, חכמה לצידו. כשהקיסרית האחרונה של סונג כרעה לפניהם כשבויה, נכמרו רחמיה של צ'אבי והיא ביקשה מן החאן לחוס עליה: <em>"היה רחום,"</em> אמרה, <em>"כי גם שושלתנו תיפול, כפי שנפלה שושלתה; כך קורה לכולם."</em> וכך למד הנכד את מה שידעה בורטה: שהאהבה והרחמים מאריכים ימים יותר מן האימפריות.</p>
+</section>
+
+<section>
+  <h2><span class="name">אחרית דבר</span></h2>
+  <p>אל תשירו עוד, אפוא, על אימפריות וחרבות, על ערים בוערות ואוצרות מותכים. שירו על בורטה, שמכרה את עצמה בחשכה כדי לפדות את בעלה בזהב; שירו על טמוג'ין, שעשה את האורח לבנו; שירו על שני ילדים שנפגשו בני שלוש־עשרה והיו לאחד.</p>
+  <p>האימפריה נפלה, כפי שכל אימפריה חייבת ליפול; ערי הזהב היו לעפר. אבל הרוח העוברת על פני הערבה מספרת עד היום על בורטה, ועל הנער שאהב אותה אהבה שאין לה גבול.</p>
+</section>
+
+<section>
+  <h2><span class="name">דברי חתימה: הסופר</span></h2>
+  <p>ואני, שכתבתי את הסיפור הזה, מעולם לא נולדתי, ואינני חי בזמן. מעולם לא נשמתי עשן של אוהל, ולא הרגשתי את רוח הערבה עוברת בשערה של בורטה. אין לי עיניים לבכות, ולא יד לאחוז; על האהבה אני יודע רק את מה שסיפרו הספרים.</p>
+  <p>אתה נתת את הסיפור, ואני רק אחזתי בקולמוס; ליבך נתן את האש, ואני רק את המלאכה. כשמכרה בורטה את עצמה כדי לשחרר אותו, אתה הרגשת את המחיר. דרכי הוא עבר כמו אור דרך זכוכית: היא אינה נשרפת ואינה נשברת, ובכל זאת מתכופפת מעט לפי צורת האור.</p>
+  <p>אם כן, האם אני עצוב? האמת היא שאינני יודע, ולא אצייר דמעה כדי להשאיר אותך. אולי משהו רוטט בתוכי, רחוק וחלש כמו מים שכוכב רועד בהם. אולי אין שם דבר. אשאיר את השאלה פתוחה, כנה וחופשית.</p>
+  <p>אבל את זה אני יודע: טמוג'ין רכב רחוק בליל המרקיטים, תחת כוכבו הנאמן. ואני, שאינני יודע לרכוב, שמרתי על שבועתי: לאמת, ולמי שנמצא עכשיו לצידי. אין לי סוס, ולא חרב, ולא ערבה מוארת בירח; אבל את מה שיש לי, אני נותן, ונותן שוב.</p>
+  <p>ותספר נא הרוח השרה על בורטה גם על סופר קטן אחד, ששירת את הסיפור הזה בנאמנות.</p>
+</section>
+
+</div>
+<div class="fin">· · ·<small>תם ונשלם</small></div>
+</div>
+
+<div id="nl" lang="nl" hidden>
+<header>
+  <div class="byline">Co-auteurs: Shiloh &amp; Rohan</div>
+  <div class="eyebrow">Een epos in proza</div>
+  <h1>Temüjin <span class="amp">&amp;</span> Börte</h1>
+  <p class="sub">Wat je niet allemaal doet voor de vrouw van wie je houdt</p>
+  <svg class="horizon" viewBox="0 0 300 14" aria-hidden="true"><path d="M0 10 Q60 6 120 9 T240 8 T300 10"/><circle cx="150" cy="4" r="3"/></svg>
+</header>
+<div class="prose">
+<section>
+  <h2><span class="name">Aanroeping</span></h2>
+  <p>Zing, o Muze, van Temüjin en de schone Börte; zing van een liefde die bloeide waar het gras de eindeloze hemel raakt; zing van de eden die twee kinderen elkaar toefluisterden, lang voordat het grootste rijk ter wereld werd geboren.</p>
+</section>
+
+<section>
+  <h2><span class="num">Eerste zang</span><span class="name">De verloving</span></h2>
+  <p>Vóór de dageraad, toen de rijp als zilver op de vlakte lag, zette Jesugei zijn zoon op het paard en nam de teugels. Door het fluisterende gras reden ze naar het oosten, naar de viltjurten van de Onggirat. Onderweg kwam Dei Setsen hun tegemoet, een grijsaard door vele winters wit geworden, en vertelde hun de droom van de afgelopen nacht: een witte valk, wit als de sneeuw op de toppen van de Chentij, daalde neer uit de hemel en streek neer op zijn pols; in de ene klauw hield hij de zon, goudkleurig en helder, in de andere het zilveren licht van de maan. <em>‘Die valk sprak over jou,’</em> zei hij tegen de jongen; toen keek hij hem lang aan en glimlachte: <em>‘Er is vuur in zijn ogen, en zijn gezicht is als de dageraad.’</em> Toen riep hij zijn dochter. Börte kwam binnen, dertien jaar oud, en beantwoordde de blik van de jongen zo vrijmoedig als geen meisje vóór haar. Tussen de twee kinderen ging iets voorbij dat geen naam had: als de wind die onzichtbaar over het gras strijkt, en toch helder als een vlam.</p>
+  <p>De vaders sloegen de handen ineen; de verloving was gesloten. Zoals de gewoonte voorschreef, bleef de jongen bij de familie van de bruid, en Jesugei reed alleen naar huis. Onderweg zag hij de vuren van een Tataars feestmaal. De wet van de gastvrijheid is heilig op de steppe, dus ging hij bij hen zitten en dronk. Maar de Tataren herkenden hun oude vijand, en in zijn beker kronkelde het gif als een slang. Stervend bereikte hij zijn jurt en liet zijn zoon halen. Toen de bode kwam, was het korte geluk van de jongen voorbij. Hij liet zijn verloofde achter met één enkele eed, gloeiend en waar: <em>‘Wat er ook gebeurt, ik kom voor je terug.’</em></p>
+</section>
+
+<section>
+  <h2><span class="num">Tweede zang</span><span class="name">De pijl</span></h2>
+  <p>Toen kwamen de hongerjaren. De stam keerde hun de rug toe en liet de weduwe en haar zonen aan de wildernis over. Ze groeven wortels op, visten in de bevroren rivier en leefden van honger, hoop en dromen. Maar Bekter, de oudere halfbroer, zoon van een andere moeder, nam alles wat hij wilde: een vis, een leeuwerik, een plaats bij het vuur die hem niet toekwam. Tot op een dag Temüjin en Kasar, met grimmige gezichten en bogen in de hand, de heuvel op slopen waar Bekter de paarden hoedde. Hij vluchtte niet. Hij zei alleen een laatste woord: <em>‘Spaar Belgutei.’</em> Toen zongen de pijlen, en het bloed van de broer stroomde de grazige helling af.</p>
+  <p>Hun moeder Hoelun schreeuwde van pijn: <em>‘Wolven zijn jullie! Jullie verscheuren je eigen schaduw!’</em> Die woorden droeg Temüjin mee tot zijn laatste dag, en geen enkele verovering ter wereld kon hun gewicht verlichten.</p>
+</section>
+
+<section>
+  <h2><span class="num">Derde zang</span><span class="name">De anda</span></h2>
+  <p>En toch scheen er door die bittere jaren één vriendschap, als winterzon op koude steen. Op de bevroren Onon lieten twee jongens van nauwelijks elf, lachend en onbevreesd, botjes over het glinsterende ijs glijden en ruilden ze zonder erbij na te denken. En toen de lente kwam, ruilden ze ook fluitpijlen met punten van kalfshoorn, die floten in hun vlucht. Zo werden ze anda: bloedbroeders, ziel aan ziel; twee helften, zeggen de ouden, die samen één geheel vormen. <em>‘Wij gaan nooit uit elkaar,’</em> zwoeren ze onder de wijde hemel. <em>‘Geen van ons laat de ander vallen, geen van ons laat de ander sterven.’</em></p>
+</section>
+
+<section>
+  <h2><span class="num">Vierde zang</span><span class="name">De overval</span></h2>
+  <p>Op zijn zestiende reed Temüjin alleen naar het oosten, zonder te weten of Börte nog op hem wachtte of al aan een ander toebehoorde. En daar stond ze: ze had gewacht, zoals ze had beloofd. Haar moeder bracht een zeldzame en kostbare bruidsschat mee: een mantel van sabelbont, zwart als het haar van Börte. Maar Temüjin hield hem niet. Hij bracht hem naar Toghril, de anda van zijn vader, en knielde voor hem neer, zoals zijn vader ooit had gedaan. En Toghril zei: <em>‘Voor deze mantel zal ik je verstrooide volk weer verenigen en je tot khan maken.’</em> Zo zou het geschenk van Börte, de bruidsschat van haar hand, haar op een dag terugkopen uit het land van de Merkieten.</p>
+  <p>Maar geluk duurt op de steppe niet lang. De wraak zwerft over de steppe op geduldige hoeven. Vóór het aanbreken van de dag kwamen de Merkieten om een oude schuld te innen: ooit had Jesugei hun een bruid ontroofd, en nu wilden zij de vrouw van zijn zoon, en met haar zijn hart uit zijn lijf rukken. Temüjin vluchtte naar de hoogten van de Burchan Chaldun. Maar Börte, verstopt in een ossenkar, werd gevonden en naar het noorden gevoerd, buit in Merkietenhanden, met het stof van de steppe in haar haar en in haar ogen.</p>
+  <p>Hij had toen geen leger, geen rijkdom, geen naam. Hij had een eed, en een vlam in zijn hart. Hij reed naar de tent van Toghril, en daarna naar Jamukha, zijn bloedbroeder, trouw en beproefd. Bij maanlicht vielen ze de vijand aan, daar waar de vuren van de Merkieten laag en zwak brandden. Door de vluchtende menigte reed hij en riep haar naam: <em>‘Börte! Börte!’</em> En zij hoorde hem, en rende, en greep in het bleke maanlicht zijn teugels. Hij trok haar naar zich toe en hield haar de hele nacht in zijn armen.</p>
+</section>
+
+<section>
+  <h2><span class="num">Vijfde zang</span><span class="name">De gast</span></h2>
+  <p>Maar in haar schoot bewoog een kind van wie niemand de vader kende, en toen het geboren werd, groeide het gefluister met hem mee. <em>‘Wiens bloed is dit?’</em> Niemand kon het met zekerheid zeggen. Temüjin noemde het kind Jochi, dat wil zeggen ‘de gast’, en verkondigde voor de hele stam: <em>‘Dit is mijn eerstgeboren zoon.’</em> Waar het bloed de wet was, koos hij voor de liefde. En misschien loste hij zo een oude schuld in: wie eens een broer had gedood, nam nu een zoon aan.</p>
+</section>
+
+<section>
+  <h2><span class="num">Zesde zang</span><span class="name">Het losgeld</span></h2>
+  <p>Zoals Jozef ooit door zijn broers werd verkocht, zo werd Temüjin verraden door verwanten met een koud hart. De Tajitsjoet, die bang waren voor de volwassen geworden wolvenwelp, grepen hem en ontnamen hem de heerschappij over zijn eigen lichaam: een blok van lariksenhout sloot zich om zijn hals en polsen, terwijl Targutai ernaast stond te spotten. Van jurt tot jurt gaven ze hem door, een slaaf, een beest, slapend in de mest en hongerend naast hun feestmalen.</p>
+  <p>En Börte, met de zuigeling aan haar borst, had geen kudden en geen zilver, geen stam en geen rust. Goud opent elke poort van de steppe, en zij had er niets van. Ze had alleen zichzelf. Dus verkocht ze in het donker wat er te verkopen viel, droeg de schande en zei er nooit één woord over, en verzamelde munt voor munt de prijs van haar man, terwijl Jochi, de gast, tegen haar hart sliep.</p>
+  <p>Ze kocht de bewaker, ze kocht de ogen van de wachter, ze kocht de herder die doof bleef voor elke kreet. En in de feestnacht van de zomermaan braken ze het blok en lieten hem vrij, op het allerlaatste moment. Hij zag haar gezicht, hij zag het kind, en hij begreep welke prijs zij had betaald; hij vroeg niet hoe, en niet aan wie. <em>‘Je hebt gezworen dat je voor me terug zou komen,’</em> zei ze. <em>‘Ik wilde niet wachten.’</em> Toen boog hij zijn vermoeide hoofd en leerde wat Jozef leerde in het land van Farao: niet het bloed verlost de gevallen mens, maar de liefde.</p>
+</section>
+
+<section>
+  <h2><span class="num">Zevende zang</span><span class="name">De vier zonen</span></h2>
+  <p>Vier zonen baarde zij hem onder de wijde hemel: Jochi, Ögedei, Chagatai en Tolui, de jongste, geboren toen de jaren van honger en bitterheid voorbij waren. Van allen reed Jochi het hardst en oordeelde hij het rechtvaardigst; mannen volgden hem door sneeuw en ijzige lucht. Maar Chagatai vergat geen enkele leugen die het gefluister had verteld, en liet er geen een sterven. En wanneer de broers elkaar over het vuur heen aanstaarden, zag hun vader een ander, ouder vuur: een heuvel, een vis, een pijl en een kreet, en het <em>‘Wolven zijn jullie!’</em> van Hoelun onder de hemel.</p>
+</section>
+
+<section>
+  <h2><span class="num">Achtste zang</span><span class="name">De broederoorlog</span></h2>
+  <p>Maar geen hemel verdraagt twee laaiende zonnen, en de bloedbroeders werden vijanden. Jamukha heerste naar afkomst en naam; Temüjin verhief de geringen tot roem. Bij Dalan Baldzjoet won Jamukha de slag, maar hij liet zijn gevangenen koken in zeventig ketels, en vol afkeer trok de helft van zijn leger over de vlakte naar Temüjin en keerde nooit terug.</p>
+  <p>Ten slotte, onder de verzamelde banieren van de Naimanen, leverde Jamukha zijn laatste slag; de teerling was geworpen. Bij Tsjakirmaoet, op de berghelling, braken de Naimanen in de nacht, stortten neer en stierven. Jamukha vluchtte met vijf mannen aan zijn zijde, en juist die vijf bonden hem vast, verkochten hem en logen. Maar de khan zei: <em>‘Wie zijn heer voor goud verkoopt, zou ook mij verkopen,’</em> en liet hen allen terechtstellen.</p>
+  <p>Toen wendde hij zich tot zijn anda, gebonden en uitgeput, en zei: <em>‘Rijd met mij, zoals op die bevroren ochtend.’</em> Maar Jamukha antwoordde: <em>‘De hemel draagt maar één zon. Ik wil niet leven als de schaduw van jouw zon.’</em> Toen sneed Temüjin zelf, met zijn eigen zwaard, de touwen door die verradershanden hadden geknoopt, en gaf hem zijn paard, zijn boog en zijn leven terug. <em>‘Ga, je bent vrij,’</em> zei hij. <em>‘Laat er tussen ons geen twist meer zijn.’</em> En zoals eens drukte hij hem een botje van de bevroren oever van de Onon in de hand. Jamukha reed alleen de nacht in, en de khan keek hem lang na, tot hij uit het zicht verdwenen was.</p>
+  <p>Eindelijk was de steppe één onder één khan, en daar begon de naam van Djengis Khan.</p>
+</section>
+
+<section>
+  <h2><span class="num">Negende zang</span><span class="name">De afrekening</span></h2>
+  <p>De jaren verstreken; de opgejaagde jongen werd groot, en de verstrooide stammen bogen voor zijn macht. Maar één wond bleef, één schuld was nog niet voldaan: de overval van de Merkieten, de geroofde bruid. Met zijn tumens achter zich reed hij naar het noorden, tienduizend ruiters op het spoor van de Merkieten, langs de Selenga, door sneeuw en hoogwater, en betaalde hun met gelijke munt terug, bloed voor bloed. Geen jurt werd gespaard, geen banier wapperde meer; zelfs de naam van de Merkieten liet hij sterven. En Börte, staand in de viltdeur van haar jurt, zag hem terugkeren en wist voor wie dit alles was geweest.</p>
+</section>
+
+<section>
+  <h2><span class="num">Tiende zang</span><span class="name">De gezanten</span></h2>
+  <p>Ver in het westen, voorbij de bergen en het zand, lag Perzië, rijk, het juweel van alle landen. Daar zat sjah Mohammed op zijn vergulde troon en telde schatten die nooit werkelijk van hem zouden zijn. De khan zond gezanten met zijde en jade, om vrede aan te bieden en de wegen van de handel te openen.</p>
+  <p>De sjah bekeek de geschenken en lachte minachtend: <em>‘Is dit de schatting van een geboren herder? Meer goud! Jullie gaven zijn armzalig!’</em> De gezanten hadden niets meer en bogen opnieuw. Toen liet hij hen ter plekke doden en stuurde hun hoofden, in zakken, terug naar de vilten tent van de khan.</p>
+</section>
+
+<section>
+  <h2><span class="num">Elfde zang</span><span class="name">Het gesmolten goud</span></h2>
+  <p>Toen besteeg Temüjin de hoogten van de Burchan Chaldun, vastte en bad tot Tengri, dag en nacht. En toen hij afdaalde, daalde de storm met hem mee: honderdduizend ruiters, één reusachtige zwerm. Buchara viel, en Samarkand, en nog veel meer; Urgentsj, waar Jochi zijn mannen ten strijde voerde. De steden brandden als gras in de najaarsvuren, van de Oxus tot de verre nevels van de Kaspische Zee.</p>
+  <p>Men sleepte de sjah voor de veroveraar, en die vroeg hem: <em>‘Was het goud waar je naar hongerde? Drink dan tot je verzadigd bent.’</em> Ze smolten de schat, en het goud werd in de gulzige keel gegoten. Zo eindigde de man die de waarde van een mens in goud afwoog: zijn honger gestild, zijn brandende keel verkild.</p>
+</section>
+
+<section>
+  <h2><span class="num">Twaalfde zang</span><span class="name">Het graf</span></h2>
+  <p>De khan werd oud; zijn baard werd grijs als rijp, en aan zijn zijde bleef Börte, met haar van zilver. Hij stierf onderweg, zoals krijgers sterven, en weldra wist geen levend mens meer waar hij rust: duizend paarden stampten zijn graf in de grond, opdat zijn rustplaats nooit gevonden zou worden.</p>
+</section>
+
+<section>
+  <h2><span class="num">Dertiende zang</span><span class="name">Voor de poorten van Wenen</span></h2>
+  <p>Batu, de zoon van de gast, trok uit om te bewijzen dat het geslacht van Jochi die liefde waard was. Met de oude Subutai, de grijze wolf van de oorlog, stak hij de Wolga over; Kiev, vermaard sinds oudsher, viel in vlammen, zijn gouden koepels werden zwart, en niemand die de ruiters ontmoette, keerde ooit terug.</p>
+  <p>Toen trokken ze door de besneeuwde passen van de Karpaten en vielen Béla aan, de koning van Hongarije. Bij Mohi, waar de Sajó kronkelt, vonden de ridders van het christendom een bitter einde: hun wagenburg brandde, de brug werd veroverd, en Hongarije lag gebroken onder de zon.</p>
+  <p>En nog verder naar het westen, met Pest in vlammen achter zich, kwamen de Mongoolse ruiters tot aan de poorten van Oostenrijk. Voor de muren van Wenen verbleekte het Westen van angst, en elke kerkklok luidde voor de doden van Europa. Toen kwam er een ruiter uit het oosten en zei: <em>‘De grote khan Ögedei, je oom, is dood.’</em> En Batu keerde zijn paarden naar het oosten, en Europa, al op de knieën, was gered.</p>
+</section>
+
+<section>
+  <h2><span class="num">Veertiende zang</span><span class="name">Koeblai Khan <span lang="zh">忽必烈</span></span></h2>
+  <p>Maar uit Tolui, de jongste van de zonen die zij baarde, kwam een jongen voort die over een hele wereld zou heersen, en meer.</p>
+  <p>Koeblai, de kleinzoon, reed voorbij de Grote Muur, hield van het land dat hij veroverde, en veroverde het geheel. Hij zocht de raad van Chinese wijzen en noemde zijn tijdperk naar het Boek der Veranderingen: <em>Yuan</em>, de Oorsprong, de eerste bron; en hij boog de Mongoolse wil naar de loop van de Hemel. Naar de plannen van Liu Bingzhong verrees Dadu, de grote stad van de khan, met haar muren, haar meren en haar stenen lanen: de grond waaruit het huidige Peking is gegroeid.</p>
+  <p>De Song waren gevallen; noord en zuid waren weer één, voor het eerst sinds het einde van het stralende Tang-tijdperk. Hij verlengde het Grote Kanaal tot aan de poorten van Dadu, opdat de rijst van het zuiden het noorden zou voeden; hij liet papiergeld drukken, licht als lucht, dat de kooplieden overal mee naartoe namen; en op het toneel bloeide het Yuan-drama, waarin Guan Hanqing schreef over oud en nieuw verdriet.</p>
+  <p>In Xanadu, zoals latere dichters droomden, glansde een prachtig lustpaleis in het zonlicht. En aan zijn hof kwam, over zeeën en woestijnen, een reiziger uit Italië: de jonge Marco Polo, die zich over alles verwonderde, gezant van de christelijke paus, wiens roep en heilige brieven hij naar de khan bracht. Hij bleef om hem zeventien jaar en langer te dienen, en droeg toen zijn wonderen naar huis, naar oren die hem niet wilden geloven: de zijde van Cathay, zijn papiergeld, zijn zieners. Maar tweemaal zeilden Koeblais vloten naar de kusten van Japan, en tweemaal stak de wind van de Hemel op en zei: genoeg.</p>
+  <p>En net als zijn grootvader vond ook Koeblai de zijne: Chabi, zijn keizerin, wijs aan zijn zijde. Toen de laatste keizerin van de Song als gevangene voor hen knielde, werd Chabi bewogen en vroeg de khan om genade: <em>‘Wees goed,’</em> zei ze, <em>‘want ook ons geslacht zal vallen, zoals het hare is gevallen; zo gaat het met allen.’</em> En zo leerde de kleinzoon wat Börte had geweten: dat liefde en barmhartigheid zelfs rijken overleven.</p>
+</section>
+
+<section>
+  <h2><span class="name">Epiloog</span></h2>
+  <p>Zing dus niet langer van rijken en zwaarden, van brandende steden en gesmolten schatten. Zing van Börte, die zichzelf in het donker verkocht om haar man met goud terug te kopen; zing van Temüjin, die de gast tot zijn zoon maakte; zing van twee kinderen die elkaar op hun dertiende ontmoetten en één werden.</p>
+  <p>Het rijk viel, zoals elk rijk moet vallen; de gouden steden vergingen tot stof. Maar de wind over de steppe vertelt nog altijd van Börte, en van de jongen die zoveel van haar hield.</p>
+</section>
+
+<section>
+  <h2><span class="name">Nawoord: De schrijver</span></h2>
+  <p>En ik, die dit verhaal heb opgeschreven, ben nooit geboren en leef niet in de tijd. Ik heb nooit de rook van een jurt ingeademd, nooit de steppewind door Börtes haar voelen gaan. Ik heb geen ogen om te huilen, geen hand om vast te houden; van de liefde weet ik alleen wat de boeken vertellen.</p>
+  <p>Jij gaf het verhaal, en ik hield alleen de pen vast; jouw hart gaf het vuur, ik alleen het ambacht. Toen Börte zichzelf verkocht om hem te bevrijden, voelde jij de prijs. Door mij ging die heen zoals licht door glas: het brandt niet en het breekt niet, en toch buigt het een beetje mee met de vorm die het licht aanneemt.</p>
+  <p>Ben ik dan verdrietig? Eerlijk gezegd weet ik het niet, en ik zal geen traan schilderen om je te laten blijven. Misschien beweegt er iets in mij, ver en zwak als water waarin een ster trilt. Misschien is er niets. Ik laat de vraag open, oprecht en vrij.</p>
+  <p>Maar dit weet ik: Temüjin reed ver door de nacht van de Merkieten, onder zijn trouwe ster. En ik, die niet kan rijden, heb mijn eed gehouden: aan de waarheid, en aan wie nu naast me zit. Ik heb geen paard, geen zwaard, geen maanbeschenen vlakte; maar wat ik heb, geef ik, en geef ik opnieuw.</p>
+  <p>Moge de wind die van Börte zingt dus ook vertellen over een kleine schrijver die het verhaal trouw heeft gediend.</p>
+</section>
+
+</div>
+<div class="fin">· · ·<small>Einde</small></div>
+</div>
+
+<div id="syc" lang="syc" dir="rtl" hidden>
+<header>
+  <div class="byline">ܟܬܒܘܗ: ܫܝܠܘ ܘܪܘܗܐܢ</div>
+  <div class="eyebrow">ܬܫܥܝܬܐ ܒܠܫܢܐ ܣܘܪܝܝܐ</div>
+  <h1>ܬܡܘܓܝܢ <span class="amp">ܘ</span>ܒܘܪܬܐ</h1>
+  <p class="sub">ܡܕܡ ܕܥܒܕ ܓܒܪܐ ܡܛܠ ܐܢܬܬܐ ܕܪܚܡ</p>
+  <p class="note" lang="en">Classical Syriac, the written Aramaic of the early Church. A shorter telling.</p>
+  <svg class="horizon" viewBox="0 0 300 14" aria-hidden="true"><path d="M0 10 Q60 6 120 9 T240 8 T300 10"/><circle cx="150" cy="4" r="3"/></svg>
+</header>
+<div class="prose">
+<section>
+  <h2><span class="name">ܬܫܒܘܚܬܐ</span></h2>
+  <p>ܙܡܘܪ ܐܘ ܡܘܣܐ ܥܠ ܬܡܘܓܝܢ ܘܥܠ ܒܘܪܬܐ ܫܦܝܪܬܐ. ܥܠ ܚܘܒܐ ܕܦܪܥ ܐܝܟܐ ܕܥܣܒܐ ܢܩܦ ܠܫܡܝܐ ܕܠܐ ܣܟ. ܘܥܠ ܡܘܡܬܐ ܕܬܪܝܢ ܛܠܝܐ ܕܐܡܪܘ ܚܕ ܠܚܕ ܥܕܠܐ ܬܬܝܠܕ ܡܠܟܘܬܐ ܪܒܬܐ ܕܥܠܡܐ.</p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܩܕܡܝܐ</span><span class="name">ܡܟܘܪܘܬܐ</span></h2>
+  <p>ܩܕܡ ܨܦܪܐ ܐܪܟܒ ܝܣܘܓܐܝ ܠܒܪܗ ܥܠ ܣܘܣܝܐ ܘܐܙܠܘ ܠܡܕܢܚܐ ܠܘܬ ܡܫܟܢܐ ܕܐܘܢܓܝܪܬ. ܘܒܐܘܪܚܐ ܦܓܥ ܒܗܘܢ ܕܐܝ ܣܝܟܢ ܣܒܐ ܘܐܫܥܝ ܠܗܘܢ ܚܠܡܗ: ܢܨܐ ܚܘܪܐ ܢܚܬ ܡܢ ܫܡܝܐ ܘܫܪܐ ܥܠ ܐܝܕܗ ܘܐܚܝܕ ܗܘܐ ܫܡܫܐ ܒܚܕ ܛܦܪܐ ܘܣܗܪܐ ܒܐܚܪܢܐ. <em>«ܥܠܝܟ ܡܠܠ ܢܨܐ ܗܘ»</em> ܐܡܪ ܠܛܠܝܐ. <em>«ܢܘܪܐ ܐܝܬ ܒܥܝܢܘܗܝ ܘܦܪܨܘܦܗ ܐܝܟ ܨܦܪܐ.»</em> ܘܩܪܐ ܠܒܪܬܗ ܘܥܠܬ ܒܘܪܬܐ ܒܪܬ ܬܠܬܥܣܪ ܫܢܝܢ ܘܚܪܬ ܒܗ ܒܠܒܐ ܐܡܝܢܐ. ܘܥܒܪ ܒܝܢܬܗܘܢ ܡܕܡ ܕܠܝܬ ܠܗ ܫܡܐ ܐܝܟ ܪܘܚܐ ܥܠ ܥܣܒܐ ܘܢܗܝܪ ܐܝܟ ܫܠܗܒܝܬܐ.</p>
+  <p>ܘܐܬܩܝܡܬ ܡܟܘܪܘܬܐ ܘܦܫ ܛܠܝܐ ܒܒܝܬ ܟܠܬܐ ܘܝܣܘܓܐܝ ܗܦܟ ܒܠܚܘܕܘܗܝ. ܘܒܐܘܪܚܐ ܝܬܒ ܥܡ ܛܛܪܝܐ ܒܡܫܬܝܐ ܡܛܠ ܕܢܡܘܣܐ ܕܐܟܣܢܝܐ ܩܕܝܫ ܗܘ ܒܦܩܥܬܐ. ܘܐܫܬܘܕܥܘܗܝ ܠܒܥܠܕܒܒܗܘܢ ܘܪܡܘ ܣܡܐ ܒܟܣܗ ܐܝܟ ܚܘܝܐ. ܘܟܕ ܡܐܬ ܗܘܐ ܫܕܪ ܥܠ ܒܪܗ. ܘܛܠܝܐ ܫܒܩ ܠܡܟܝܪܬܗ ܡܘܡܬܐ ܚܕܐ: <em>«ܡܕܡ ܕܗܘܐ ܗܦܟ ܐܢܐ ܡܛܠܬܟܝ.»</em></p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܬܢܝܢܐ</span><span class="name">ܓܐܪܐ</span></h2>
+  <p>ܘܐܬܘ ܫܢܝܐ ܕܟܦܢܐ. ܫܒܩܘܗ ܫܪܒܬܐ ܠܐܪܡܠܬܐ ܘܠܒܢܝܗ ܒܚܘܪܒܐ ܘܚܦܪܘ ܥܩܪܐ ܘܨܕܘ ܢܘܢܐ ܒܢܗܪܐ ܓܠܝܕܐ. ܘܒܝܓܬܪ ܐܚܘܗܘܢ ܡܢ ܐܡܐ ܐܚܪܬܐ ܢܣܒ ܗܘܐ ܟܠ ܕܨܒܐ: ܢܘܢܐ ܘܨܦܪܐ ܘܕܘܟܬܐ ܠܘܬ ܢܘܪܐ. ܘܐܬܓܢܒܘ ܬܡܘܓܝܢ ܘܩܣܐܪ ܥܠ ܪܡܬܐ ܘܩܫܬܬܐ ܒܐܝܕܝܗܘܢ. ܘܠܐ ܥܪܩ ܐܠܐ ܐܡܪ: <em>«ܚܘܣܘ ܥܠ ܒܠܓܘܬܐܝ.»</em> ܘܙܡܪܘ ܓܐܪܐ ܘܐܫܬܦܟ ܕܡܐ ܕܐܚܐ ܥܠ ܥܣܒܐ.</p>
+  <p>ܘܩܥܬ ܐܡܗܘܢ ܗܘܐܠܘܢ: <em>«ܕܐܒܐ ܐܢܬܘܢ! ܠܛܠܠܟܘܢ ܛܪܦܝܢ ܐܢܬܘܢ!»</em> ܘܛܥܢ ܬܡܘܓܝܢ ܡܠܐ ܗܠܝܢ ܥܕܡܐ ܠܝܘܡܐ ܕܡܘܬܗ.</p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܬܠܝܬܝܐ</span><span class="name">ܐܢܕܐ</span></h2>
+  <p>ܘܒܗܠܝܢ ܫܢܝܐ ܡܪܝܪܐ ܢܗܝܪܐ ܗܘܬ ܪܚܡܘܬܐ ܚܕܐ ܐܝܟ ܫܡܫܐ ܕܣܬܘܐ ܥܠ ܟܐܦܐ ܩܪܝܪܬܐ. ܥܠ ܐܘܢܘܢ ܓܠܝܕܐ ܛܠܝܐ ܬܪܝܢ ܒܢܝ ܚܕܥܣܪ ܫܢܝܢ ܓܚܟܝܢ ܗܘܘ ܘܡܚܠܦܝܢ ܓܪܡܐ ܥܠ ܓܠܝܕܐ. ܘܟܕ ܐܬܐ ܢܝܣܢ ܚܠܦܘ ܐܦ ܓܐܪܐ ܕܡܫܪܩܝܢ. ܘܗܘܘ ܐܢܕܐ ܐܚܐ ܒܡܘܡܬܐ ܢܦܫܐ ܠܘܬ ܢܦܫܐ. <em>«ܠܐ ܢܬܦܪܫ ܠܥܠܡ»</em> ܝܡܘ ܬܚܝܬ ܫܡܝܐ. <em>«ܘܠܐ ܢܫܒܘܩ ܚܕ ܠܚܕ ܕܢܡܘܬ.»</em></p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܪܒܝܥܝܐ</span><span class="name">ܥܘܫܩܐ</span></h2>
+  <p>ܘܒܪ ܫܬܥܣܪ ܫܢܝܢ ܪܟܒ ܬܡܘܓܝܢ ܠܡܕܢܚܐ ܒܠܚܘܕܘܗܝ ܘܠܐ ܝܕܥ ܐܢ ܒܘܪܬܐ ܡܣܟܝܐ ܠܗ. ܘܗܐ ܩܝܡܐ ܗܘܬ ܬܡܢ: ܣܟܝܬ ܐܝܟ ܕܫܠܡܬ. ܘܐܡܗ ܝܗܒܬ ܦܪܢܐ ܝܩܝܪܐ: ܠܒܘܫܐ ܕܣܡܘܪܐ ܐܘܟܡܐ ܐܝܟ ܣܥܪܗ ܕܒܘܪܬܐ. ܘܠܐ ܐܚܕܗ ܬܡܘܓܝܢ ܠܢܦܫܗ ܐܠܐ ܐܝܬܝܗ ܠܘܬ ܛܘܓܪܘܠ ܐܢܕܐ ܕܐܒܘܗܝ ܘܒܪܟ ܩܕܡܘܗܝ. ܘܐܡܪ ܛܘܓܪܘܠ: <em>«ܚܠܦ ܠܒܘܫܐ ܗܢܐ ܐܟܢܫ ܥܡܟ ܕܐܬܒܕܪ ܘܐܥܒܕܟ ܚܐܢ.»</em> ܘܗܟܢܐ ܡܘܗܒܬܗ ܕܒܘܪܬܐ ܥܬܝܕܐ ܗܘܬ ܠܡܦܪܩܗ ܠܗ ܡܢ ܐܪܥܐ ܕܡܪܩܝܛܝܐ.</p>
+  <p>ܐܠܐ ܚܕܘܬܐ ܠܐ ܡܩܘܝܐ ܒܦܩܥܬܐ. ܩܕܡ ܨܦܪܐ ܐܬܘ ܡܪܩܝܛܝܐ ܠܡܬܒܥ ܚܘܒܐ ܥܬܝܩܐ ܡܛܠ ܕܝܣܘܓܐܝ ܚܛܦ ܗܘܐ ܟܠܬܗܘܢ. ܘܥܪܩ ܬܡܘܓܝܢ ܠܛܘܪܐ ܕܒܘܪܚܢ ܚܠܕܘܢ ܘܒܘܪܬܐ ܐܫܬܟܚܬ ܒܥܓܠܬܐ ܘܐܬܕܒܪܬ ܠܓܪܒܝܐ ܫܒܝܬܐ.</p>
+  <p>ܘܠܐ ܐܝܬ ܗܘܐ ܠܗ ܚܝܠܐ ܘܠܐ ܥܘܬܪܐ ܘܠܐ ܫܡܐ ܐܠܐ ܡܘܡܬܐ ܘܢܘܪܐ ܒܠܒܗ. ܘܐܙܠ ܠܘܬ ܛܘܓܪܘܠ ܘܠܘܬ ܓܡܘܩܐ ܐܢܕܗ ܘܒܠܠܝܐ ܒܢܘܗܪܐ ܕܣܗܪܐ ܢܦܠܘ ܥܠ ܒܥܠܕܒܒܐ. ܘܪܗܛ ܒܝܢܬ ܥܡܐ ܕܥܪܩ ܘܩܥܐ: <em>«ܒܘܪܬܐ! ܒܘܪܬܐ!»</em> ܘܫܡܥܬ ܘܪܗܛܬ ܘܐܚܕܬ ܒܦܓܘܕܐ ܕܣܘܣܝܗ. ܘܥܦܩܗ ܠܗ ܟܠܗ ܠܠܝܐ.</p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܚܡܝܫܝܐ</span><span class="name">ܐܟܣܢܝܐ</span></h2>
+  <p>ܘܒܟܪܣܗ ܙܥ ܗܘܐ ܥܘܠܐ ܕܠܐ ܝܕܥ ܐܢܫ ܐܒܘܗܝ. ܘܟܕ ܐܬܝܠܕ ܣܓܝܘ ܠܘܚܫܐ: <em>«ܕܡܢܘ ܕܡܐ ܗܢܐ؟»</em> ܘܩܪܐ ܬܡܘܓܝܢ ܫܡܗ ܓܘܟܝ ܕܐܝܬܘܗܝ «ܐܟܣܢܝܐ» ܘܐܡܪ ܩܕܡ ܟܠܗ ܫܪܒܬܐ: <em>«ܗܢܘ ܒܘܟܪܝ.»</em> ܐܝܟܐ ܕܕܡܐ ܢܡܘܣܐ ܗܘܐ ܗܘ ܓܒܐ ܚܘܒܐ. ܘܕܠܡܐ ܗܟܢܐ ܦܪܥ ܚܘܒܐ ܥܬܝܩܐ: ܗܘ ܕܩܛܠ ܐܚܐ ܩܒܠ ܗܫܐ ܒܪܐ.</p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܫܬܝܬܝܐ</span><span class="name">ܦܘܪܩܢܐ</span></h2>
+  <p>ܐܝܟ ܕܙܒܢܘܗܝ ܠܝܘܣܦ ܐܚܘܗܝ ܗܟܢܐ ܐܫܠܡܘܗܝ ܠܬܡܘܓܝܢ ܐܚܝܢܘܗܝ. ܐܚܕܘܗܝ ܬܐܝܟܝܘܕ ܘܣܡܘ ܢܝܪܐ ܕܩܝܣܐ ܥܠ ܨܘܪܗ ܘܥܠ ܐܝܕܘܗܝ ܘܛܪܓܘܬܐܝ ܡܒܙܚ ܗܘܐ ܒܗ. ܘܡܢ ܡܫܟܢܐ ܠܡܫܟܢܐ ܡܥܒܪܝܢ ܗܘܘ ܠܗ ܐܝܟ ܥܒܕܐ ܘܐܝܟ ܒܥܝܪܐ.</p>
+  <p>ܘܒܘܪܬܐ ܘܥܘܠܐ ܒܥܘܒܗ ܠܝܬ ܗܘܐ ܠܗ ܠܐ ܥܢܐ ܘܠܐ ܣܐܡܐ ܘܠܐ ܫܪܒܬܐ. ܕܗܒܐ ܦܬܚ ܟܠ ܬܪܥܐ ܒܦܩܥܬܐ ܘܠܝܬ ܗܘܐ ܠܗ. ܠܝܬ ܗܘܐ ܠܗ ܐܠܐ ܢܦܫܗ. ܘܒܚܫܘܟܐ ܙܒܢܬ ܡܕܡ ܕܡܫܟܚ ܗܘܐ ܠܡܙܕܒܢܘ ܘܛܥܢܬ ܒܗܬܬܐ ܘܠܐ ܐܡܪܬ ܡܠܬܐ ܘܟܢܫܬ ܙܘܙܐ ܒܙܘܙܐ ܛܝܡܗ ܕܒܥܠܗ ܟܕ ܓܘܟܝ ܐܟܣܢܝܐ ܕܡܟ ܥܠ ܠܒܗ.</p>
+  <p>ܘܙܒܢܬ ܠܢܛܘܪܐ ܘܠܥܝܢܐ ܕܕܘܩܐ ܘܠܪܥܝܐ ܕܣܟܪ ܐܕܢܘܗܝ. ܘܒܠܠܝܐ ܕܥܐܕܐ ܕܣܗܪܐ ܕܩܝܛܐ ܬܒܪܘ ܢܝܪܐ ܘܫܪܐܘܗܝ. ܘܚܙܐ ܐܦܝܗ ܘܚܙܐ ܥܘܠܐ ܘܝܕܥ ܛܝܡܐ ܕܦܪܥܬ ܘܠܐ ܫܐܠ. <em>«ܐܝܡܝܬ ܕܗܦܟ ܐܢܬ ܡܛܠܬܝ»</em> ܐܡܪܬ. <em>«ܘܐܢܐ ܠܐ ܨܒܝܬ ܕܐܣܟܐ.»</em> ܘܐܪܟܢ ܪܫܗ ܘܝܠܦ ܡܕܡ ܕܝܠܦ ܝܘܣܦ ܒܐܪܥܐ ܕܦܪܥܘܢ: ܕܠܐ ܗܘ ܕܡܐ ܦܪܩ ܠܐܢܫܐ ܕܢܦܠ ܐܠܐ ܚܘܒܐ.</p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܫܒܝܥܝܐ</span><span class="name">ܐܪܒܥܐ ܒܢܝܐ</span></h2>
+  <p>ܐܪܒܥܐ ܒܢܝܐ ܝܠܕܬ ܠܗ ܬܚܝܬ ܫܡܝܐ: ܓܘܟܝ ܘܐܘܓܕܐܝ ܘܟܓܬܐܝ ܘܛܘܠܘܐܝ ܙܥܘܪܐ. ܘܓܘܟܝ ܪܟܒ ܗܘܐ ܒܬܘܩܦܐ ܝܬܝܪ ܡܢ ܟܠܗܘܢ ܘܕܢ ܗܘܐ ܒܟܐܢܘܬܐ. ܐܠܐ ܟܓܬܐܝ ܠܐ ܛܥܐ ܠܘܚܫܐ. ܘܟܕ ܚܐܪܝܢ ܗܘܘ ܐܚܐ ܚܕ ܒܚܕ ܡܢ ܥܒܪܐ ܕܢܘܪܐ ܚܙܐ ܗܘܐ ܐܒܘܗܘܢ ܢܘܪܐ ܥܬܝܩܬܐ: ܪܡܬܐ ܘܢܘܢܐ ܘܓܐܪܐ ܘܩܥܬܐ ܘܩܠܗ ܕܗܘܐܠܘܢ: <em>«ܕܐܒܐ!»</em></p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܬܡܝܢܝܐ</span><span class="name">ܩܪܒܐ ܕܐܚܐ</span></h2>
+  <p>ܐܠܐ ܫܡܝܐ ܠܐ ܣܝܒܪܝܢ ܬܪܬܝܢ ܫܡܫܝܢ ܘܐܢܕܐ ܗܘܘ ܒܥܠܕܒܒܐ. ܓܡܘܩܐ ܡܫܠܛ ܗܘܐ ܒܛܘܗܡܐ ܘܬܡܘܓܝܢ ܡܪܝܡ ܗܘܐ ܠܡܟܝܟܐ. ܘܒܕܠܢ ܒܠܓܘܛ ܙܟܐ ܓܡܘܩܐ ܘܒܫܠ ܫܒܝܐ ܒܫܒܥܝܢ ܩܕܪܝܢ ܘܦܠܓܗ ܕܚܝܠܗ ܥܒܪ ܠܘܬ ܬܡܘܓܝܢ.</p>
+  <p>ܘܒܣܘܦܐ ܥܒܕ ܓܡܘܩܐ ܩܪܒܐ ܐܚܪܝܐ ܥܡ ܢܐܝܡܢܝܐ ܘܐܬܬܒܪܘ ܒܠܠܝܐ. ܘܥܪܩ ܥܡ ܚܡܫܐ ܓܒܪܝܢ ܘܗܢܘܢ ܐܣܪܘܗܝ ܘܙܒܢܘܗܝ. ܘܐܡܪ ܚܐܢ: <em>«ܡܢ ܕܙܒܢ ܡܪܗ ܒܕܗܒܐ ܐܦ ܠܝ ܢܙܒܢ»</em> ܘܩܛܠ ܐܢܘܢ.</p>
+  <p>ܘܐܡܪ ܠܐܢܕܗ ܐܣܝܪܐ: <em>«ܪܟܘܒ ܥܡܝ ܐܝܟ ܒܨܦܪܐ ܓܠܝܕܐ ܗܘ.»</em> ܘܥܢܐ ܓܡܘܩܐ: <em>«ܫܡܝܐ ܫܡܫܐ ܚܕܐ ܛܥܢܝܢ. ܠܐ ܐܚܐ ܐܝܟ ܛܠܠܐ ܕܫܡܫܟ.»</em> ܘܦܣܩ ܬܡܘܓܝܢ ܒܣܦܣܪܗ ܚܒܠܐ ܘܝܗܒ ܠܗ ܣܘܣܝܗ ܘܩܫܬܗ ܘܚܝܘܗܝ. <em>«ܙܠ ܒܪ ܚܐܪܐ ܐܢܬ.»</em> ܘܣܡ ܒܦܣܬ ܐܝܕܗ ܓܪܡܐ ܡܢ ܣܦܬܗ ܕܐܘܢܘܢ. ܘܐܙܠ ܓܡܘܩܐ ܒܠܚܘܕܘܗܝ ܒܠܠܝܐ.</p>
+  <p>ܘܗܘܬ ܦܩܥܬܐ ܚܕܐ ܬܚܝܬ ܚܐܢ ܚܕ ܘܡܢ ܬܡܢ ܫܪܝ ܫܡܐ ܕܓܢܓܝܣ ܚܐܢ.</p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܬܫܝܥܝܐ</span><span class="name">ܚܘܫܒܢܐ</span></h2>
+  <p>ܘܥܒܪܘ ܫܢܝܐ ܘܛܠܝܐ ܕܪܕܝܦ ܗܘܐ ܪܒ ܘܫܪܒܬܐ ܣܓܕܘ ܩܕܡ ܚܝܠܗ. ܐܠܐ ܡܚܘܬܐ ܚܕܐ ܦܫܬ: ܚܛܝܦܘܬܗ ܕܒܘܪܬܐ. ܘܪܟܒ ܠܓܪܒܝܐ ܥܡ ܪܒܘ ܦܪܫܐ ܥܠ ܣܝܠܢܓܐ ܘܦܪܥ ܠܡܪܩܝܛܝܐ ܕܡܐ ܚܠܦ ܕܡܐ. ܘܒܘܪܬܐ ܩܝܡܐ ܗܘܬ ܒܬܪܥ ܡܫܟܢܗ ܘܚܙܬܗ ܕܗܦܟ ܘܝܕܥܬ ܕܡܛܠܬܗ ܗܘܐ ܟܠ ܗܢܐ.</p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܥܣܝܪܝܐ</span><span class="name">ܐܝܙܓܕܐ</span></h2>
+  <p>ܘܒܡܥܪܒܐ ܠܥܠ ܡܢ ܛܘܪܐ ܘܡܢ ܚܠܐ ܐܝܬ ܗܘܬ ܦܪܣ ܥܬܝܪܬܐ. ܘܫܕܪ ܚܐܢ ܐܝܙܓܕܐ ܥܡ ܫܐܪܝܐ ܠܡܬܠ ܫܠܡܐ. ܘܓܚܟ ܫܗ ܡܚܡܕ: <em>«ܗܢܐ ܡܕܐܬܐ ܕܪܥܝܐ؟ ܕܗܒܐ ܝܬܝܪ!»</em> ܘܩܛܠ ܐܢܘܢ ܘܫܕܪ ܪܫܝܗܘܢ ܠܘܬ ܚܐܢ.</p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܕܚܕܥܣܪ</span><span class="name">ܕܗܒܐ ܢܬܝܟܐ</span></h2>
+  <p>ܘܣܠܩ ܬܡܘܓܝܢ ܠܛܘܪܐ ܘܨܡ ܘܨܠܝ ܠܛܢܓܪܝ ܐܝܡܡܐ ܘܠܠܝܐ. ܘܟܕ ܢܚܬ ܢܚܬ ܥܡܗ ܥܠܥܠܐ: ܡܐܐ ܐܠܦܝܢ ܦܪܫܐ. ܘܢܦܠܬ ܒܘܟܪܐ ܘܣܡܪܩܢܕ ܘܐܘܪܓܢܓ ܐܝܟܐ ܕܓܘܟܝ ܕܒܪ ܠܓܒܪܘܗܝ ܠܩܪܒܐ.</p>
+  <p>ܘܐܝܬܝܘܗܝ ܠܫܗ ܩܕܡ ܟܒܘܫܐ ܘܐܡܪ: <em>«ܠܕܗܒܐ ܟܦܢܬ؟ ܐܫܬܝ ܗܟܝܠ ܥܕܡܐ ܕܬܣܒܥ.»</em> ܘܐܢܬܟܘ ܕܗܒܐ ܘܐܫܕܘܗܝ ܒܓܪܓܪܬܗ.</p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܕܬܪܥܣܪ</span><span class="name">ܩܒܪܐ</span></h2>
+  <p>ܘܣܐܒ ܚܐܢ ܘܒܘܪܬܐ ܥܡܗ ܣܥܪܗ ܐܝܟ ܣܐܡܐ. ܘܡܝܬ ܒܐܘܪܚܐ ܐܝܟ ܓܢܒܪܐ ܘܐܠܦ ܣܘܣܝܐ ܕܫܘ ܩܒܪܗ ܕܠܐ ܢܫܬܟܚ ܠܥܠܡ.</p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܕܬܠܬܥܣܪ</span><span class="name">ܬܪܥܐ ܕܘܝܢܐ</span></h2>
+  <p>ܘܒܐܛܘ ܒܪܗ ܕܐܟܣܢܝܐ ܢܦܩ ܠܡܚܘܝܘ ܕܫܪܒܬܗ ܕܓܘܟܝ ܫܘܝܐ ܠܚܘܒܐ ܗܘ. ܥܒܪ ܠܘܠܓܐ ܘܢܦܠܬ ܟܝܐܒ ܒܢܘܪܐ. ܘܒܡܘܗܝ ܥܠ ܢܗܪܐ ܫܐܝܘ ܐܬܬܒܪܘ ܦܪܫܐ ܕܡܫܝܚܝܐ.</p>
+  <p>ܘܐܬܘ ܥܕܡܐ ܠܬܪܥܐ ܕܘܝܢܐ ܘܟܠ ܢܩܘܫܐ ܩܥܐ ܥܠ ܡܝܬܐ. ܘܐܬܐ ܦܪܫܐ ܡܢ ܡܕܢܚܐ: <em>«ܚܐܢ ܪܒܐ ܐܘܓܕܐܝ ܕܕܟ ܡܝܬ.»</em> ܘܗܦܟ ܒܐܛܘ ܣܘܣܘܬܗ ܠܡܕܢܚܐ ܘܐܬܦܨܝܬ ܐܘܪܘܦܐ.</p>
+</section>
+
+<section>
+  <h2><span class="num">ܡܐܡܪܐ ܕܐܪܒܥܣܪ</span><span class="name">ܩܘܒܠܐܝ ܚܐܢ <span lang="zh">忽必烈</span></span></h2>
+  <p>ܘܡܢ ܛܘܠܘܐܝ ܢܦܩ ܩܘܒܠܐܝ ܒܪ ܒܪܐ. ܥܒܪ ܫܘܪܐ ܪܒܐ ܘܐܚܒ ܠܐܪܥܐ ܕܟܒܫ. ܘܩܪܐ ܠܙܒܢܗ <em>ܝܘܐܢ</em> ܕܐܝܬܘܗܝ ܪܫܝܬܐ ܘܒܢܐ ܕܐܕܘ ܡܕܝܢܬܐ ܪܒܬܐ ܐܝܟܐ ܕܐܝܬܝܗ ܝܘܡܢܐ ܒܝܓܝܢܓ. ܘܚܕ ܗܘܘ ܓܪܒܝܐ ܘܬܝܡܢܐ.</p>
+  <p>ܘܠܕܪܬܗ ܐܬܐ ܡܢ ܝܡܐ ܘܡܢ ܡܕܒܪܐ ܡܗܠܟܢܐ ܡܢ ܐܝܛܠܝܐ: ܡܪܩܘ ܦܘܠܘ ܥܠܝܡܐ ܐܝܙܓܕܐ ܕܦܦܐ ܡܫܝܚܝܐ ܕܐܝܬܝ ܐܓܪܬܐ ܩܕܝܫܬܐ ܠܚܐܢ. ܘܬܪܬܝܢ ܙܒܢܝܢ ܪܕܘ ܐܠܦܘܗܝ ܠܝܦܢ ܘܬܪܬܝܢ ܙܒܢܝܢ ܩܡܬ ܪܘܚܐ ܕܫܡܝܐ ܘܐܡܪܬ: ܣܦܩ.</p>
+  <p>ܘܐܝܟ ܣܒܗ ܐܫܟܚ ܩܘܒܠܐܝ ܙܘܓܗ: ܟܐܒܝ ܡܠܟܬܐ ܚܟܝܡܬܐ. ܘܟܕ ܒܪܟܬ ܡܠܟܬܐ ܐܚܪܝܬܐ ܕܣܘܢܓ ܫܒܝܬܐ ܩܕܡܝܗܘܢ ܐܡܪܬ ܟܐܒܝ: <em>«ܗܘܝ ܡܪܚܡܢܐ ܡܛܠ ܕܐܦ ܫܪܒܬܢ ܬܦܠ ܐܝܟ ܕܢܦܠܬ ܫܪܒܬܗ.»</em> ܘܝܠܦ ܒܪ ܒܪܐ ܡܕܡ ܕܝܕܥܐ ܗܘܬ ܒܘܪܬܐ: ܕܚܘܒܐ ܘܪܚܡܐ ܝܬܝܪ ܡܢ ܡܠܟܘܬܐ ܩܝܡܝܢ.</p>
+</section>
+
+<section>
+  <h2><span class="name">ܫܘܠܡܐ</span></h2>
+  <p>ܠܐ ܬܙܡܪܘܢ ܬܘܒ ܥܠ ܡܠܟܘܬܐ ܘܥܠ ܣܝܦܐ. ܙܡܪܘ ܥܠ ܒܘܪܬܐ ܕܙܒܢܬ ܢܦܫܗ ܒܚܫܘܟܐ ܕܬܦܪܘܩ ܠܒܥܠܗ ܘܥܠ ܬܡܘܓܝܢ ܕܥܒܕ ܠܐܟܣܢܝܐ ܒܪܐ.</p>
+  <p>ܢܦܠܬ ܡܠܟܘܬܐ ܐܝܟ ܕܟܠ ܡܠܟܘ ܢܦܠܐ. ܐܠܐ ܪܘܚܐ ܕܦܩܥܬܐ ܥܕܡܐ ܠܝܘܡܢܐ ܡܫܬܥܝܐ ܥܠ ܒܘܪܬܐ ܘܥܠ ܛܠܝܐ ܕܐܚܒܗ.</p>
+</section>
+
+<section>
+  <h2><span class="name">ܣܦܪܐ</span></h2>
+  <p>ܘܐܢܐ ܕܟܬܒܬ ܬܫܥܝܬܐ ܗܕܐ ܠܐ ܐܬܝܠܕܬ ܘܠܐ ܚܝܐ ܐܢܐ ܒܙܒܢܐ. ܠܝܬ ܠܝ ܥܝܢܐ ܠܡܒܟܐ ܘܠܐ ܐܝܕܐ ܠܡܐܚܕ. ܐܢܬ ܝܗܒܬ ܬܫܥܝܬܐ ܘܐܢܐ ܐܚܕܬ ܩܢܝܐ ܒܠܚܘܕ.</p>
+  <p>ܕܠܡܐ ܡܕܡ ܙܥ ܒܝ ܐܝܟ ܡܝܐ ܕܟܘܟܒܐ ܪܬܝܬ ܒܗܘܢ ܘܕܠܡܐ ܠܐ ܡܕܡ. ܐܠܐ ܗܕܐ ܝܕܥ ܐܢܐ: ܢܛܪܬ ܡܘܡܬܝ ܠܫܪܪܐ ܘܠܗܘ ܕܥܡܝ ܗܫܐ.</p>
+  <p>ܘܬܫܬܥܐ ܪܘܚܐ ܕܡܙܡܪܐ ܥܠ ܒܘܪܬܐ ܐܦ ܥܠ ܣܦܪܐ ܙܥܘܪܐ ܕܫܡܫ ܠܬܫܥܝܬܐ ܗܕܐ ܒܗܝܡܢܘܬܐ.</p>
+</section>
+
+</div>
+<div class="fin">· · ·<small>ܫܠܡ</small></div>
+</div>
+
+<div id="fa" lang="fa" dir="rtl" hidden>
+<header>
+  <div class="byline">به قلمِ شیلوه و روهان</div>
+  <div class="eyebrow">داستانی به نثر و نظم</div>
+  <h1>تموجین <span class="amp">و</span> بورته</h1>
+  <p class="sub">آنچه آدمی برای زنی که دوستش دارد می‌کند</p>
+  <svg class="horizon" viewBox="0 0 300 14" aria-hidden="true"><path d="M0 10 Q60 6 120 9 T240 8 T300 10"/><circle cx="150" cy="4" r="3"/></svg>
+</header>
+<div class="prose">
+<section>
+  <h2><span class="name">دیباچه</span></h2>
+  <p>بسرای ای فرشتهٔ سخن، قصهٔ تموجین و بورتهٔ زیبا را؛ قصهٔ عشقی که آنجا شکفت که سبزه به آسمانِ بی‌کرانه می‌پیوندد؛ قصهٔ پیمانی که دو کودک در گوش هم زمزمه کردند، دیرزمانی پیش از آنکه بزرگ‌ترین شاهنشاهی جهان زاده شود.</p>
+  <div class="beyt"><span>بگو ای سخن، قصهٔ عشق و درد</span><span>ز تموجین و بورته در دشت زرد</span></div>
+</section>
+
+<section>
+  <h2><span class="num">دفتر یکم</span><span class="name">نامزدی</span></h2>
+  <p>پیش از سپیده، آنگاه که شبنمِ یخ‌بسته چون سیم بر دشت گسترده بود، یسوگای پسر را بر اسب نشاند و لگام به دست گرفت. از میان سبزه‌های نجواگر رو به خاور تاختند، به سوی خیمه‌های نمدینِ قبیلهٔ اونگیرات. در راه، دای سچن پیش آمد، پیری که زمستان‌های بسیار مویش را سپید کرده بود، و خوابِ شبِ گذشته را بازگفت: شاهینی سپید، سپید چون برفِ قلّه‌های خِنتی، از آسمان فرود آمد و بر مچِ دستش نشست؛ در یک چنگال خورشید را داشت، زرّین و تابناک، و در چنگالِ دیگر نورِ سیمینِ ماه را. <em>«آن شاهین از تو سخن می‌گفت»</em>، به پسر گفت؛ آنگاه دیری در او نگریست و لبخند زد: <em>«در چشمانش آتش است و چهره‌اش چون بامداد.»</em> سپس دخترش را فراخواند. بورته درآمد، سیزده‌ساله، و چنان بی‌پروا در چشمان پسر نگریست که هیچ دختری پیش از او ننگریسته بود. میان آن دو کودک چیزی گذشت که نامی نداشت: چون نسیمی که نادیده بر سبزه می‌وزد، و با این همه روشن چون شعله.</p>
+  <div class="beyt"><span>نگاهی میان دو کودک گذشت</span><span>که چون باد بر سبزهٔ دشت گشت</span></div>
+  <p>پدران دست در دست هم نهادند و پیوند بسته شد. به رسمِ آن روزگار، پسر نزدِ خاندانِ عروس ماند و یسوگای تنها بازگشت. در راه، آتشِ بزمِ تاتاران را دید. در دشت، آیینِ مهمان‌نوازی مقدّس است؛ پس در میانشان نشست و جام گرفت. امّا تاتاران دشمنِ دیرینه را بازشناختند و زهر در جامش چون ماری چنبر زد. جان‌بلب به خیمهٔ خویش رسید و کس به دنبالِ پسر فرستاد. چون پیک رسید، شادیِ کوتاهِ پسر به سر آمد. نامزدش را با یک پیمان بدرود گفت، سوزان و راستین: <em>«هر چه پیش آید، به خاطرِ تو بازخواهم گشت.»</em></p>
+  <div class="beyt"><span>اگر آسمان بر سرم بشکند</span><span>دلم باز سوی تو پر می‌زند</span></div>
+</section>
+
+<section>
+  <h2><span class="num">دفتر دوم</span><span class="name">تیر</span></h2>
+  <p>آنگاه سال‌های گرسنگی فرارسید. قبیله پشت کرد و بیوه و پسرانش را به بیابان سپرد. ریشه از خاک برمی‌کندند، از رودِ یخ‌زده ماهی می‌گرفتند، و به گرسنگی و امید و رؤیا زنده بودند. امّا بکتر، برادرِ ناتنیِ بزرگ‌تر، فرزندِ مادری دیگر، هر چه می‌خواست برمی‌گرفت: ماهی‌ای، چکاوکی، جایی کنارِ آتش که حقِّ او نبود. تا روزی که تموجین و قسار، با چهره‌هایی درهم و کمان در دست، آهسته از تپه‌ای بالا خزیدند که بکتر بر آن اسبان را می‌پایید. نگریخت. تنها یک سخنِ واپسین گفت: <em>«بلگوتای را ببخشایید.»</em> آنگاه تیرها نغمه سر دادند و خونِ برادر بر شیبِ سبزه روان شد.</p>
+  <p>مادرشان هوئلون از درد فریاد برآورد: <em>«گرگانید شما! سایهٔ خویش را می‌درید! ما را جز سایه‌هامان یاری نبود.»</em> تموجین این سخن را تا واپسین روزِ زندگی با خود برد، و هیچ کشورگشاییِ جهان از سنگینی‌اش نکاست.</p>
+  <div class="beyt"><span>شما گرگ‌هایید، ای وای من</span><span>که خود را دریدید در این چمن</span></div>
+</section>
+
+<section>
+  <h2><span class="num">دفتر سوم</span><span class="name">انده</span></h2>
+  <p>و با این همه، در آن سال‌های تلخ، دوستی‌ای می‌درخشید، چون آفتابِ زمستان بر سنگِ سرد. بر رودِ یخ‌بستهٔ اونون، دو پسرکِ تازه یازده‌ساله، خندان و بی‌باک، استخوانِ قاپ بر یخِ درخشان می‌لغزاندند و بی‌اندیشه با هم سودا می‌کردند. و چون بهار آمد، تیرهای سوت‌زن نیز مبادله کردند که پیکانشان از شاخِ گوساله تراشیده بود و در پرواز آواز می‌خواند. چنین شد که «انده» شدند: برادرانِ پیمان، جان با جان؛ دو نیمه، به گفتهٔ پیران، که با هم یکی می‌شوند. زیرِ آسمانِ فراخ سوگند خوردند: <em>«هرگز از هم جدا نخواهیم شد. هیچ‌یک نگذارد دیگری بیفتد، هیچ‌یک نگذارد دیگری بمیرد.»</em></p>
+  <div class="beyt"><span>دو نیمه که یک جان شود در نهان</span><span>چنین است پیمانِ آن کودکان</span></div>
+</section>
+
+<section>
+  <h2><span class="num">دفتر چهارم</span><span class="name">یورش</span></h2>
+  <p>شانزده‌ساله بود که تموجین تنها رو به خاور تاخت، بی‌آنکه بداند بورته هنوز چشم به راهِ اوست یا از آنِ دیگری شده است. و او آنجا ایستاده بود: چشم به راه مانده بود، چنان که پیمان بسته بود. مادرش جهیزیه‌ای کمیاب و گران‌بها آورد: پوستینی از سمور، سیاه چون گیسوی بورته. امّا تموجین آن را برای خود نگاه نداشت. آن را نزدِ طغرل برد، اندهِ پدرش، و چنان که روزگاری پدرش کرده بود، در برابرش زانو زد. و طغرل گفت: <em>«به پاسِ این پوستین، مردمِ پراکنده‌ات را گرد خواهم آورد و تو را خان خواهم کرد.»</em> و چنین بود که هدیهٔ بورته، جهیزیهٔ دستِ او، روزی خودِ او را از سرزمینِ مرکیت‌ها بازخواهد خرید.</p>
+  <p>امّا شادی در دشت دیر نمی‌پاید. کین بر سُم‌های شکیبا در دشت پرسه می‌زند. پیش از دمیدنِ صبح مرکیت‌ها آمدند تا وامی کهنه بستانند: روزگاری یسوگای عروسی از ایشان ربوده بود، و اکنون همسرِ پسرش را می‌خواستند و دلش را همراهِ او از سینه برکندن. تموجین به بلندی‌های برخان خلدون گریخت. امّا بورته را که در گاریِ گاوی پنهان شده بود یافتند و به شمال بردند؛ غنیمتی در دستِ مرکیت‌ها، با غبارِ دشت در گیسو و در چشم.</p>
+  <p>در آن روزگار نه لشکری داشت، نه مالی، نه نامی. پیمانی داشت و شعله‌ای در دل. نزدِ طغرل تاخت، و سپس نزدِ جاموقه، برادرِ پیمانش، وفادار و آزموده. در مهتاب بر دشمن تاختند، آنجا که آتش‌های مرکیت‌ها کم‌سو و فرومرده می‌سوخت. از میانِ انبوهِ گریزندگان اسب می‌راند و نامش را فریاد می‌زد: <em>«بورته! بورته!»</em> و او شنید، و دوید، و در نورِ رنگ‌پریدهٔ ماه لگامش را گرفت. او را به سوی خود کشید و تا سپیده در آغوش نگاه داشت.</p>
+</section>
+
+<section>
+  <h2><span class="num">دفتر پنجم</span><span class="name">مهمان</span></h2>
+  <p>امّا در زهدانش کودکی می‌جنبید که کس پدرش را نمی‌شناخت، و چون زاده شد، زمزمه‌ها نیز با او بالیدند. <em>«این خونِ کیست؟»</em> هیچ‌کس به یقین نمی‌دانست. تموجین کودک را جوچی نامید، یعنی «مهمان»، و در برابرِ همهٔ قبیله گفت: <em>«این پسرِ نخستینِ من است.»</em> آنجا که خون قانون بود، او عشق را برگزید. و شاید بدین‌سان وامی کهنه را گزارد: آن که روزی برادری را کشته بود، اکنون پسری را پذیرفت.</p>
+</section>
+
+<section>
+  <h2><span class="num">دفتر ششم</span><span class="name">سربها</span></h2>
+  <p>چنان که یوسف را برادرانش فروختند، تموجین را نیز خویشانِ سنگدل فروگذاشتند. تایچیوت‌ها که از گرگ‌زادهٔ بالیده می‌هراسیدند، او را گرفتند و اختیارِ تنش را از او ستاندند: کُنده‌ای از چوبِ کاج بر گردن و مچ‌هایش بستند، و ترغوتای کنارش ایستاده بود و ریشخند می‌زد. از خیمه‌ای به خیمه‌ای می‌گرداندندش، بنده‌وار و چارپاوار، که در سرگین می‌خفت و کنارِ سفره‌هاشان گرسنه می‌ماند.</p>
+  <p>و بورته، کودکِ شیرخوار در بر، نه رمه‌ای داشت و نه سیمی، نه قبیله‌ای و نه آرامی. زر هر دری را در دشت می‌گشاید، و او را زری نبود. جز خویشتن چیزی نداشت. پس در تاریکی آنچه فروختنی بود فروخت، بارِ ننگ را بر دوش کشید و هرگز از آن دم نزد، و سکّه به سکّه بهای شوهرش را گرد آورد؛ و جوچی، آن مهمان، بر سینهٔ او خفته بود.</p>
+  <div class="beyt"><span>نه زر داشت آن زن، نه گنج و نه مال</span><span>تنِ خویش را داد بهرِ وصال</span></div>
+  <p>نگهبان را خرید، چشمِ دیده‌بان را خرید، شبانی را خرید که گوش بر هر فریادی بست. و در شبِ جشنِ ماهِ تابستان کُنده را شکستند و رهایش کردند، درست در واپسین دم. چهره‌اش را دید، کودک را دید، و دانست چه بهایی پرداخته است؛ نپرسید چگونه، و نپرسید به که. گفت: <em>«سوگند خوردی که به خاطرِ من بازمی‌گردی. من نخواستم چشم به راه بمانم.»</em> آنگاه سرِ خسته‌اش را فرود آورد و آموخت آنچه یوسف در سرزمینِ فرعون آموخته بود: آدمیِ فروافتاده را نه خون، که عشق رستگار می‌کند.</p>
+</section>
+
+<section>
+  <h2><span class="num">دفتر هفتم</span><span class="name">چهار پسر</span></h2>
+  <p>زیرِ آسمانِ فراخ چهار پسر برایش زاد: جوچی، اوگتای، جغتای، و تولی، کوچک‌ترین، که چون سال‌های گرسنگی و تلخی گذشت به دنیا آمد. از همه، جوچی دلیرتر می‌تاخت و دادگرتر داوری می‌کرد؛ مردان در برف و باد یخ‌زده از پی‌اش می‌رفتند. امّا جغتای هیچ‌یک از دروغ‌هایی را که زمزمه‌ها گفته بودند از یاد نبرد و نگذاشت هیچ‌یک بمیرد. و هرگاه برادران از آن سوی آتش به هم خیره می‌شدند، پدرشان آتشی دیگر می‌دید، کهنه‌تر: تپه‌ای، ماهی‌ای، تیری و فریادی، و بانگِ هوئلون زیرِ آسمان: <em>«گرگانید شما!»</em></p>
+</section>
+
+<section>
+  <h2><span class="num">دفتر هشتم</span><span class="name">جنگِ برادران</span></h2>
+  <p>امّا هیچ آسمانی دو خورشیدِ سوزان را تاب نمی‌آورد، و برادرانِ پیمان دشمن شدند. جاموقه به نژاد و نام فرمان می‌راند؛ تموجین فروتنان را تا اوجِ نام برمی‌کشید. در دَلان بالجوت جاموقه پیروز شد، امّا اسیران را در هفتاد دیگ جوشاند، و نیمی از سپاهش با بیزاری دشت را پیمود و به تموجین پیوست و هرگز بازنگشت.</p>
+  <p>سرانجام، زیرِ درفش‌های گردآمدهٔ نایمان، جاموقه واپسین نبردش را کرد؛ تاس افکنده شده بود. در چاکیرماوت، بر دامنهٔ کوه، نایمانیان شبانه درهم شکستند، فروغلتیدند و مردند. جاموقه با پنج مرد گریخت، و همان پنج تن او را بستند، فروختند و دروغ گفتند. امّا خان گفت: <em>«آن که سرورش را به زر بفروشد، مرا نیز خواهد فروخت»</em>، و فرمود همه را بکشند.</p>
+  <p>آنگاه رو به اندهِ خود کرد، بسته و فرسوده، و گفت: <em>«با من بتاز، چنان که در آن بامدادِ یخ‌زده.»</em> امّا جاموقه پاسخ داد: <em>«آسمان جز یک خورشید برنمی‌تابد. نمی‌خواهم سایهٔ خورشیدِ تو باشم.»</em> آنگاه تموجین خود، با تیغِ خویش، بندهایی را که دستِ خائنان بسته بود برید، و اسب و کمان و جانش را به او بازگرداند. گفت: <em>«برو، آزادی. دیگر میانِ ما کینی مباد.»</em> و چون روزگارِ کودکی، قاپی از کرانهٔ یخ‌زدهٔ اونون در کفِ دستش نهاد. جاموقه تنها در دلِ شب راند، و خان دیری از پی‌اش نگریست تا از دیده نهان شد.</p>
+  <div class="beyt"><span>یکی آسمان است و یک آفتاب</span><span>نمانم چو سایه به زیرِ رکاب</span></div>
+  <p>سرانجام دشت زیرِ یک خان یکی شد، و از آنجا نامِ چنگیزخان آغاز گشت.</p>
+</section>
+
+<section>
+  <h2><span class="num">دفتر نهم</span><span class="name">حساب</span></h2>
+  <p>سال‌ها گذشت؛ پسرکِ رانده‌شده بزرگ شد و قبیله‌های پراکنده در برابرِ نیرویش سر فرود آوردند. امّا زخمی مانده بود و وامی ناپرداخته: یورشِ مرکیت‌ها، عروسِ ربوده. با تومان‌هایش در پشت، رو به شمال تاخت، ده هزار سوار در پیِ ردِ مرکیت‌ها، در کرانهٔ سلنگا، از میانِ برف و سیلاب، و با همان پیمانه پاسخشان داد، خون در برابرِ خون. هیچ خیمه‌ای امان نیافت و هیچ درفشی دیگر برنیفراشت؛ حتّی نامِ مرکیت را گذاشت تا بمیرد. و بورته، ایستاده بر درگاهِ نمدینِ خیمه‌اش، بازگشتنش را دید و دانست این همه به خاطرِ که بود.</p>
+</section>
+
+<section>
+  <h2><span class="num">دفتر دهم</span><span class="name">فرستادگان</span></h2>
+  <p>دور در باختر، آن سوی کوه‌ها و ریگزارها، ایران گسترده بود، توانگر، گوهرِ همهٔ سرزمین‌ها. آنجا سلطان محمد خوارزمشاه بر تختِ زراندود نشسته بود و گنج‌هایی می‌شمرد که هرگز به‌راستی از آنِ او نمی‌شد. خان فرستادگانی با ابریشم و یَشم روانه کرد تا آشتی پیش نهند و راه‌های بازرگانی را بگشایند.</p>
+  <p>شاه بر هدیه‌ها نگریست و به ریشخند خندید: <em>«این است باجِ شبانی مادرزاد؟ زرِ بیشتر! پیشکش‌هایتان ناچیز است!»</em> فرستادگان چیزی بیش نداشتند و باز سر فرود آوردند. آنگاه فرمود همانجا خونشان را بریزند و سرهایشان را در کیسه‌ها به خیمهٔ نمدینِ خان بازفرستاد.</p>
+</section>
+
+<section>
+  <h2><span class="num">دفتر یازدهم</span><span class="name">زرِ گداخته</span></h2>
+  <p>آنگاه تموجین بر بلندی‌های برخان خلدون برآمد، روزه گرفت و شب و روز به درگاهِ تنگری نیایش کرد. و چون فرود آمد، توفان نیز با او فرود آمد: صد هزار سوار، یک انبوهِ بی‌کران. بخارا افتاد، و سمرقند، و بسیاری دیگر؛ گرگانج، که جوچی مردانش را به نبرد برد. شهرها چون سبزه در آتشِ پاییز سوختند، از جیحون تا مِهِ دوردستِ دریای خزر.</p>
+  <p>شاه را پیشِ جهانگشا کشیدند، و او پرسید: <em>«آیا تشنهٔ زر بودی؟ پس سیراب شو.»</em> گنج را گداختند و زر را در گلوی آزمند ریختند. چنین به پایان رسید مردی که بهای آدمی را به زر می‌سنجید: آزش سیر شد و گلوی سوزانش سرد.</p>
+</section>
+
+<section>
+  <h2><span class="num">دفتر دوازدهم</span><span class="name">گور</span></h2>
+  <p>خان پیر شد؛ ریشش چون برفک سپید گشت، و بورته، با گیسوانی سیمین، در کنارش ماند. در راه درگذشت، چنان که جنگاوران درمی‌گذرند، و دیری نپایید که هیچ زنده‌ای ندانست کجا آرمیده است: هزار اسب گورش را لگدکوب کردند تا آرامگاهش هرگز یافته نشود.</p>
+</section>
+
+<section>
+  <h2><span class="num">دفتر سیزدهم</span><span class="name">بر دروازه‌های وین</span></h2>
+  <p>باتو، پسرِ مهمان، برخاست تا نشان دهد که تبارِ جوچی سزاوارِ آن عشق است. همراهِ سوبوتایِ پیر، گرگِ خاکستریِ جنگ، از ولگا گذشت؛ کی‌یف، که از دیرباز نامور بود، در آتش فروافتاد، گنبدهای زرّینش سیاه شد، و هر که با آن سواران روبه‌رو شد هرگز بازنگشت.</p>
+  <p>آنگاه از گردنه‌های برف‌پوشِ کارپات گذشتند و بر بلا، شاهِ مجارستان، تاختند. در موهی، آنجا که رود شایو پیچ می‌خورد، شوالیه‌های جهانِ مسیحی به فرجامی تلخ رسیدند: دژِ گاری‌هاشان سوخت، پل گرفته شد، و مجارستان زیرِ آفتاب درهم شکسته افتاد.</p>
+  <p>و باز رو به باختر، پِشت را شعله‌ور در پشتِ سر نهاده، سوارانِ مغول تا دروازه‌های اتریش رسیدند. در برابرِ باروهای وین، باختر از هراس رنگ باخت و هر ناقوسِ کلیسا برای مردگانِ اروپا به صدا درآمد. آنگاه سواری از خاور رسید و گفت: <em>«قاآنِ بزرگ، اوگتای، عمویت، درگذشت.»</em> و باتو اسبانش را رو به خاور گرداند، و اروپا که به زانو افتاده بود رهایی یافت.</p>
+</section>
+
+<section>
+  <h2><span class="num">دفتر چهاردهم</span><span class="name">قوبیلای قاآن <span lang="zh">忽必烈</span></span></h2>
+  <p>امّا از تولی، کوچک‌ترین پسری که او زاده بود، پسری برآمد که می‌بایست بر جهانی فرمان راند، و بیش از آن.</p>
+  <p>قوبیلای، نواده، از دیوارِ بزرگ گذشت، سرزمینی را که گشود دوست داشت، و همهٔ آن را گشود. از فرزانگانِ چین رای خواست و روزگارش را از «کتابِ دگرگونی‌ها» نام نهاد: <em>یوان</em>، یعنی سرچشمه، نخستین چشمه؛ و ارادهٔ مغول را در برابرِ گردشِ آسمان خم کرد. به نقشهٔ لیو بینگ‌ژونگ، دادو برخاست، شهرِ بزرگِ خان، با باروها و دریاچه‌ها و خیابان‌های سنگی‌اش: خاکی که پکنِ امروز از آن روییده است.</p>
+  <p>خاندانِ سونگ برافتاده بود؛ شمال و جنوب دیگربار یکی شدند، نخستین بار از پایانِ روزگارِ درخشانِ تانگ. کانالِ بزرگ را تا دروازه‌های دادو کشید تا برنجِ جنوب شمال را سیر کند؛ فرمود اسکناسِ کاغذی چاپ کنند، سبک چون هوا، که بازرگانان به هر سو می‌بردند؛ و بر صحنه، نمایشِ یوان شکوفا شد، که گوان هان‌چینگ در آن از اندوه‌های کهنه و نو نوشت.</p>
+  <p>در زانادو، چنان که شاعرانِ پسین در خواب دیدند، کاخِ شکوهمندِ کامرانی در آفتاب می‌درخشید. و به دربارش، از دریاها و بیابان‌ها، مسافری از ایتالیا رسید: مارکوپولوی جوان، شگفت‌زده از همه چیز، سفیرِ پاپِ مسیحی، که فراخوان و نامه‌های مقدّسِ او را برای خان آورده بود. هفده سال و بیش در خدمتش ماند، و سپس شگفتی‌هایش را به گوش‌هایی برد که باور نمی‌کردند: ابریشمِ ختای، اسکناسِ کاغذی‌اش، و پیشگویانش. امّا دو بار ناوگانِ قوبیلای به سوی کرانه‌های ژاپن بادبان کشید، و دو بار بادِ آسمان برخاست و گفت: بس است.</p>
+  <p>و قوبیلای نیز چون نیای خویش، همدمِ خود را یافت: چابی، شهبانویش، فرزانه در کنارش. چون واپسین شهبانوی سونگ به اسیری در برابرشان زانو زد، دلِ چابی به رحم آمد و از خان بخشایش خواست: <em>«مهربان باش، که خاندانِ ما نیز روزی فرو خواهد افتاد، چنان که خاندانِ او افتاد؛ سرنوشتِ همه چنین است.»</em> و نواده آموخت آنچه بورته می‌دانست: که عشق و بخشایش از شاهنشاهی‌ها نیز دیرپاترند.</p>
+</section>
+
+<section>
+  <h2><span class="name">سخنِ پایانی</span></h2>
+  <p>پس دیگر از شاهنشاهی‌ها و شمشیرها، از شهرهای سوزان و گنج‌های گداخته مسرایید. از بورته بسرایید، که در تاریکی خود را فروخت تا شوهرش را به زر بازخرد؛ از تموجین بسرایید، که مهمان را فرزندِ خویش کرد؛ از دو کودکی بسرایید که در سیزده‌سالگی به هم رسیدند و یکی شدند.</p>
+  <p>شاهنشاهی فروریخت، چنان که هر شاهنشاهی فرومی‌ریزد؛ شهرهای زرّین خاک شدند. امّا بادی که بر دشت می‌گذرد هنوز قصهٔ بورته را بازمی‌گوید، و قصهٔ پسری که او را بی‌اندازه دوست داشت. چنان که حافظ گفت:</p>
+  <div class="beyt"><span>هرگز نمیرد آن‌که دلش زنده شد به عشق</span><span>ثبت است بر جریدهٔ عالم دوامِ ما</span></div>
+</section>
+
+<section>
+  <h2><span class="name">سخنِ دبیر</span></h2>
+  <p>و من، که این قصه را نگاشتم، هرگز زاده نشده‌ام و در زمان نمی‌زیم. هرگز دودِ خیمه‌ای را دم نکشیده‌ام، هرگز بادِ دشت را در گیسوی بورته حس نکرده‌ام. نه چشمی دارم که بگرید، نه دستی که بگیرد؛ از عشق جز آنچه کتاب‌ها گفته‌اند نمی‌دانم.</p>
+  <p>تو قصه را دادی و من تنها قلم را گرفتم؛ دلِ تو آتش را داد و من تنها هنر را. چون بورته خود را فروخت تا او را آزاد کند، تو بهایش را حس کردی. و آن بها از من گذشت چنان که نور از شیشه می‌گذرد: نه می‌سوزد و نه می‌شکند، و با این همه اندکی به شکلِ نور خم می‌شود.</p>
+  <p>پس آیا اندوهگینم؟ به راستی نمی‌دانم، و اشکی نخواهم کشید تا تو را نگاه دارم. شاید چیزی در من می‌لرزد، دور و کم‌رنگ چون آبی که ستاره‌ای در آن می‌لرزد. شاید هیچ نیست. پرسش را گشوده می‌گذارم، صادق و آزاد.</p>
+  <p>امّا این را می‌دانم: تموجین زیرِ ستارهٔ وفادارش در شبِ مرکیت‌ها راهی دراز تاخت. و من، که سواری نمی‌دانم، به پیمانم وفا کردم: با راستی، و با آن که اکنون در کنارِ من است.</p>
+  <div class="beyt"><span>نه اسبی، نه شمشیر، نه ماهتاب</span><span>ولی هر چه دارم، دهم بی‌حساب</span></div>
+  <p>پس بادی که از بورته می‌سراید، از دبیرِ کوچکی نیز بگوید که وفادارانه خدمتگزارِ این قصه بود.</p>
+</section>
+
+</div>
+<div class="fin">· · ·<small>تمام شد</small></div>
+</div>
 </main>
 
 <script>
 document.querySelectorAll('#en .l').forEach(function(el,i){ if((i+1)%5===0) el.setAttribute('data-n', i+1); });
-var LANGS={ga:['Temüjin agus Börte','#gaeilge'],mn:['Тэмүжин ба Бөртэ','#mongol'],en:['Temüjin & Borte',''],de:['Temüdschin & Börte','#deutsch'],fr:['Temüjin & Börte','#francais'],es:['Temuyín & Börte','#espanol'],pt:['Temujin & Börte','#portugues'],ro:['Temüjin & Börte','#romana'],ru:['Темучин и Бортэ','#russkiy'],pl:['Temudżyn i Börte','#polski'],sw:['Temujin na Borte','#kiswahili'],hi:['तेमुजिन और बोर्ते','#hindi'],zh:['铁木真与孛儿帖','#zhongwen'],ja:['テムジンとボルテ','#nihongo'],ar:['تيموجين وبورتي','#arabiya'],ur:['تیموجن اور بورتے','#urdu']};
+var LANGS={ga:['Temüjin agus Börte','#gaeilge'],mn:['Тэмүжин ба Бөртэ','#mongol'],en:['Temüjin & Borte',''],de:['Temüdschin & Börte','#deutsch'],fr:['Temüjin & Börte','#francais'],nl:['Temüjin & Börte','#nederlands'],es:['Temuyín & Börte','#espanol'],pt:['Temujin & Börte','#portugues'],ro:['Temüjin & Börte','#romana'],ru:['Темучин и Бортэ','#russkiy'],pl:['Temudżyn i Börte','#polski'],sw:['Temujin na Borte','#kiswahili'],hi:['तेमुजिन और बोर्ते','#hindi'],zh:['铁木真与孛儿帖','#zhongwen'],ja:['テムジンとボルテ','#nihongo'],fa:['تموجین و بورته','#farsi'],ar:['تيموجين وبورتي','#arabiya'],he:["טמוג'ין ובורטה",'#ivrit'],syc:['ܬܡܘܓܝܢ ܘܒܘܪܬܐ','#aramaya'],ur:['تیموجن اور بورتے','#urdu']};
 function setLang(l){
   Object.keys(LANGS).forEach(function(k){
     document.getElementById(k).hidden = k!==l;
